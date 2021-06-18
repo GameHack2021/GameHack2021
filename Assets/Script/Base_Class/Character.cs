@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public Animator mAnimator;
+    public Rigidbody2D mRigidBody;
+    public Collider2D mCollider;
+    
+
+    private void Start() {
+        mAnimator = GetComponent<Animator>();
+        mRigidBody = GetComponent<Rigidbody2D>();
+        mCollider = GetComponent<Collider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
