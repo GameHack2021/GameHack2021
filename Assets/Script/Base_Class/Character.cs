@@ -7,12 +7,13 @@ public class Character : MonoBehaviour
     public Animator mAnimator;
     public Rigidbody2D mRigidBody;
     public Collider2D mCollider;
+    public Transform mTransform;
     
 
-    private void Start() {
-        mAnimator = GetComponent<Animator>();
-        mRigidBody = GetComponent<Rigidbody2D>();
-        mCollider = GetComponent<Collider2D>();
+    // Usefull Functions for characters
+    public void flipSprite(Transform mtransform)
+    {
+        mtransform.localScale = new Vector2(Mathf.Sign(mRigidBody.velocity.x), 1f);
     }
 
 }
