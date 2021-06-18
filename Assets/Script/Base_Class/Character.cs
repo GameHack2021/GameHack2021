@@ -8,7 +8,12 @@ public class Character : MonoBehaviour
     public Rigidbody2D mRigidBody;
     public Collider2D mCollider;
     public Transform mTransform;
-    
+
+
+    // Variable to hold the sate of the character
+    public bool canWalk;
+    public bool canJump;
+    public bool onGround;
 
     // Usefull Functions for characters
     public void flipSprite(Transform mtransform)
