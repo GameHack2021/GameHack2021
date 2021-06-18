@@ -2,4 +2,6 @@
 # TODO:
     - Pick up Cat
     - Camera control
+    - Time control
+    - Interactive design
 
