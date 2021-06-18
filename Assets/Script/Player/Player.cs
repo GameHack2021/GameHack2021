@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : Character
 {
 
+    int cat_Carried;
     void Start()
     {
 
@@ -17,6 +18,8 @@ public class Player : Character
         canWalk = true;
         canJump = true;
         onGround = true;
+
+        cat_Carried = 0;
     }
 
     // Update is called once per frame
