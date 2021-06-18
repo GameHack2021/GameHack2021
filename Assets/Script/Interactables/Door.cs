@@ -9,10 +9,8 @@ public class Door : MonoBehaviour
     private void Start() {
         accepted = false;
     }
-    private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.tag == "Player"){
-            accepted = true;
-        }
+    private void OnTriggerEnter2D(Collider2D other) {
+       
     }
 
 }

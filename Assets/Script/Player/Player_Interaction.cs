@@ -6,8 +6,11 @@ public class Player_Interaction : MonoBehaviour
 {
     Player player;
     
-    // Interaction objects variable
+    // Interaction objects variablex
+    public int catsToTake;
     int cat_Carried;
+    bool canTakeCats;
+
 
     void Start()
     {
@@ -15,6 +18,8 @@ public class Player_Interaction : MonoBehaviour
 
         // initialize variables
         cat_Carried = 0;
+        canTakeCats = true;
+        
     }
 
     // Update is called once per frame
@@ -23,13 +28,22 @@ public class Player_Interaction : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "Home"){
+            if(canTakeCats){
+                cat_Carried = cat_Carried + catsToTake;
+            }
+        }
+
         if(other.gameObject.tag == "Cat"){
             cat_Carried = cat_Carried + 1;
         }
 
         if(other.gameObject.tag == "Door"){
-            cat_Carried = cat_Carried - 1;
+            if(!other.gameObject.GetComponent<Door>().accepted){
+                other.gameObject.GetComponent<Door>().accepted = true;
+                cat_Carried = cat_Carried -1;
+            }
         }
 
         Debug.Log("Carried cat:"+cat_Carried);

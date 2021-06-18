@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : Character
 {
-
     void Start()
     {
 
@@ -13,7 +12,6 @@ public class Player : Character
         mCollider = GetComponent<Collider2D>();
         mTransform = GetComponent<Transform>();
 
-        // TODO: can later be a intialize class function
         canWalk = true;
         canJump = true;
         onGround = true;
