@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : Character
 {
 
-    int cat_Carried;
     void Start()
     {
 
@@ -19,7 +18,6 @@ public class Player : Character
         canJump = true;
         onGround = true;
 
-        cat_Carried = 0;
     }
 
     // Update is called once per frame
@@ -40,7 +38,7 @@ public class Player : Character
         if(LayerMask.LayerToName(other.gameObject.layer) == "Ground"){
             onGround = true;
             canWalk = true;
-            Debug.Log("on ground");
+
             if(canJump == false){
                 canJump = true;
             }
