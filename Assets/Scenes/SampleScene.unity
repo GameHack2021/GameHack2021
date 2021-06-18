@@ -493,6 +493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walk_Velocity: 10
+  jump_Force: 5
+  jump_Velocity_H: 2
 --- !u!114 &1456426289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,3 +512,5 @@ MonoBehaviour:
   mCollider: {fileID: 0}
   mTransform: {fileID: 0}
   canWalk: 0
+  canJump: 0
+  onGround: 0
