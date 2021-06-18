@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5a487e24bbfd8459ec5094a61887cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walk_Velocity: 10
+  walk_Velocity: 5
   jump_Force: 10
   jump_Velocity_H: 5
 --- !u!114 &1456426289
