@@ -61,14 +61,16 @@ public class Player_Controller : MonoBehaviour
             current_Velocity_H = walk_Velocity;
         }
 
-        if(player.canJump){
-            current_Velocity_H = jump_Force;
+        // TODO: Need to change the condition
+        if(!player.canJump){
+            current_Velocity_H = jump_Velocity_H;
         }
     }
 
 
     // Controll players horizontal move
     void move_H(){
+
         Vector2 updated_Velocity = new Vector2(input_Horizontal*current_Velocity_H,player.mRigidBody.velocity.y);
         player.mRigidBody.velocity =updated_Velocity;
  
