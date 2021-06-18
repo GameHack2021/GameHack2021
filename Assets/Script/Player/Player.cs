@@ -34,9 +34,13 @@ public class Player : Character
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.layer == LayerMask.GetMask("Ground")){
+        if(LayerMask.LayerToName(other.gameObject.layer) == "Ground"){
             onGround = true;
             canWalk = true;
+            Debug.Log("on ground");
+            if(canJump == false){
+                canJump = true;
+            }
         }
     }
 

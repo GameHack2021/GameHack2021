@@ -77,5 +77,6 @@ public class Player_Controller : MonoBehaviour
     void jump(){
         Vector2 updated_Velocity = new Vector2(player.mRigidBody.velocity.x, jump_Force);
         player.mRigidBody.velocity = updated_Velocity;
+        player.canJump = false;
     }
 }
