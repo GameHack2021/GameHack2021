@@ -16,6 +16,12 @@ public class Player_Controller : MonoBehaviour
     // Properties
     [SerializeField] float walk_Velocity;
     [SerializeField] float jump_Force;
+    [SerializeField] float jump_Velocity_H;
+
+    // Variables to record current
+    
+    // Change depends on the state
+    float current_Velocity_H;
 
     void Start()
     {
@@ -26,6 +32,7 @@ public class Player_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        velocity_Control();
         getInputs();
         processInputs();
     }
@@ -40,8 +47,8 @@ public class Player_Controller : MonoBehaviour
 
     void processInputs(){
 
-        if(Mathf.Abs(input_Horizontal) > 0 && player.canWalk ){
-            walk();
+        if(Mathf.Abs(input_Horizontal) > 0 ){
+            move_H();
         }
 
         if(input_Jump && player.canJump){
@@ -49,8 +56,20 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
-    void walk(){
-        Vector2 updated_Velocity = new Vector2(input_Horizontal*walk_Velocity,player.mRigidBody.velocity.y);
+    void velocity_Control(){
+        if(player.canWalk){
+            current_Velocity_H = walk_Velocity;
+        }
+
+        if(player.canJump){
+            current_Velocity_H = jump_Force;
+        }
+    }
+
+
+    // Controll players horizontal move
+    void move_H(){
+        Vector2 updated_Velocity = new Vector2(input_Horizontal*current_Velocity_H,player.mRigidBody.velocity.y);
         player.mRigidBody.velocity =updated_Velocity;
  
     }
