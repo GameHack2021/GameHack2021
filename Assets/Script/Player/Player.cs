@@ -8,7 +8,7 @@ public class Player : Character
     void Start()
     {
 
-        mAnimator = GetComponent<Animator>();
+        mAnimCon = new AnimCon(GetComponent<Animator>());
         mRigidBody = GetComponent<Rigidbody2D>();
         mCollider = GetComponent<Collider2D>();
         mTransform = GetComponent<Transform>();
@@ -23,8 +23,7 @@ public class Player : Character
     // Update is called once per frame
     void Update()
     {
-        // Flip the picture when turning around
-        flipSprite(mTransform);
+       
     }
 
     // Manage the state of the player

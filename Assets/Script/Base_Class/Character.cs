@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public Animator mAnimator;
+    // Compnents to get
+    public AnimCon mAnimCon;
     public Rigidbody2D mRigidBody;
     public Collider2D mCollider;
     public Transform mTransform;
+
 
 
     // Variable to hold the sate of the character
