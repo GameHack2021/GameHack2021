@@ -4,4 +4,5 @@
     - Camera control
     - Time control
     - Interactive design
+    - Cat collider should be a trigger
 
