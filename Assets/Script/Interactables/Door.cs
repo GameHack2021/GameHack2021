@@ -28,7 +28,7 @@ public class Door : MonoBehaviour
                     accepted = true;
                 }else{
                     GameObject temp = Instantiate(floatCat,transform);
-                    temp.transform.localPosition = new Vector3(0,0,0);
+                    temp.transform.localPosition = new Vector3(0,0.42f,0);
                 }
 
                 player_Interaction.cat_Carried = player_Interaction.cat_Carried -1;
