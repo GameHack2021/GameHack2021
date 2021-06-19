@@ -87,7 +87,6 @@ public class Chasing : MonoBehaviour
     {
         jumping = false;
         CheckFocus();
-
     }
 
     void CheckFocus()
