@@ -50,7 +50,6 @@ public class NeighbourHideNSeek : MonoBehaviour
             isThere = false;
             transform.parent.parent.GetComponent<Door>().canAccept = false;
         }
-        print(timeStamp);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
