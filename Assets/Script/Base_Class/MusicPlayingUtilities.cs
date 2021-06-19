@@ -24,11 +24,6 @@ public class MusicPlayingUtilities : MonoBehaviour
         float length = audioClip.length;
         while (true)
         {
-            if (stopPlaying)
-            {
-                stopPlaying = false;
-                break;
-            }
             audioSource.PlayOneShot(audioClip, 0.4f);
             yield return new WaitForSeconds(length);
         }
@@ -42,22 +37,20 @@ public class MusicPlayingUtilities : MonoBehaviour
         float length2 = audioClip2.length;
         while (true)
         {
-            if (stopPlaying)
-            {
-                stopPlaying = false;
-                break;
-            }
+            
             if (playFirstOne)
             {
                 playFirstOne = false;
                 audioSource.PlayOneShot(audioClip1, 1f);
+                yield return new WaitForSeconds(length1);
 
-            }else
+            }
+            else
             {
                 playFirstOne = true;
                 audioSource.PlayOneShot(audioClip2, 1f);
+                yield return new WaitForSeconds(length2);
             }
-            yield return new WaitForSeconds(2);
 
 
         }

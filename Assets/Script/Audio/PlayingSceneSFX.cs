@@ -25,8 +25,8 @@ public class PlayingSceneSFX : MusicPlayingUtilities
 
     public void startPlayingFootstep()
     {
-        //StartCoroutine(LoopFootStep(footstep_01, footstep_02)) ;
-        StartCoroutine(LoopAudio(footstep_01));
+        StartCoroutine(LoopFootStep(footstep_01, footstep_02)) ;
+        //StartCoroutine(LoopAudio(footstep_01));
     }
 
     public void stopPlayingFootstep()
