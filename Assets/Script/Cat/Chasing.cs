@@ -79,7 +79,6 @@ public class Chasing : MonoBehaviour
             jumping = true;
             rb.velocity = aimVelocity;
         }
-        print(dst - previousY);
         previousY = dst;
             
     }
