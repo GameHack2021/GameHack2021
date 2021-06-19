@@ -7,6 +7,7 @@ public class Chasing : MonoBehaviour
     public float minChasingDistanceInX = 4.0f;
     public float minChasingDistanceInY = 3.5f;
     public float chasingSpeed = 2.0f;
+    public float jumpingVel = 12f;
 
     GameObject player;
     Rigidbody2D rb;
@@ -14,8 +15,12 @@ public class Chasing : MonoBehaviour
     Collider2D myCollider;
     
     float previousY = 0;
+    Vector2 direction = new Vector2();
+    float dstX = 0;
+    float dstY = 0;
 
     bool jumping = false;
+    bool focused = false;
     private void Awake()
     {
         player = GameObject.Find("Player");
@@ -26,14 +31,18 @@ public class Chasing : MonoBehaviour
     }
     private void Update()
     {
-        CounterMovement();
+        direction = (player.transform.position - transform.position);
+        dstX = Mathf.Abs(player.transform.position.x - transform.position.x);
+        dstY = Mathf.Abs(player.transform.position.y - transform.position.y);
+
+        if (focused)
+            CounterMovement();
+        else
+            CheckFocus();
     }
 
     void CounterMovement()
     {
-        float dst = Vector2.Distance(player.transform.position, transform.position);
-        float dstX = Mathf.Abs(player.transform.position.x - transform.position.x);
-        float dstY = Mathf.Abs(player.transform.position.y - transform.position.y);
         if (dstX >= minChasingDistanceInX)
             ChaseInX(dstX);
         if (dstY >= minChasingDistanceInY)
@@ -42,8 +51,6 @@ public class Chasing : MonoBehaviour
 
     void ChaseInX(float dst)
     {
-        Vector2 direction = (player.transform.position - transform.position);
-
         float xDirection;
 
         if (direction.x > 0)
@@ -64,24 +71,36 @@ public class Chasing : MonoBehaviour
 
     void ChaseInY(float dst)
     {
-        previousY = dst;
-        
-        Vector2 direction = (player.transform.position - transform.position);
-
         if (dst - previousY < 0 && !jumping)    
         {
             Vector2 aimVelocity = new Vector2();
             aimVelocity.x = rb.velocity.x;
-            aimVelocity.y = 15f;
+            aimVelocity.y = jumpingVel;
             jumping = true;
             rb.velocity = aimVelocity;
         }
-
-        
+        print(dst - previousY);
+        previousY = dst;
+            
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         jumping = false;
+        CheckFocus();
+
+    }
+
+    void CheckFocus()
+    {
+        previousY = 0;
+        if (dstX <= 10f && dstY <= 2f)
+        {
+            focused = true;
+        }
+        else
+        {
+            focused = false;
+        }
     }
 }
