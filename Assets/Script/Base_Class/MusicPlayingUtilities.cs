@@ -16,7 +16,7 @@ public class MusicPlayingUtilities : MonoBehaviour
 
     private void Update()
     {
-        print(allowPlaying);
+        // print(allowPlaying);
 
     }
     public IEnumerator LoopAudio(AudioClip audioClip, float volume)
