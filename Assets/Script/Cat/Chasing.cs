@@ -71,7 +71,6 @@ public class Chasing : MonoBehaviour
 
     void ChaseInY(float dst)
     {
-            print(dst - previousY);
         if (dst - previousY < 0 && !jumping)
         {
             Vector2 aimVelocity = new Vector2();

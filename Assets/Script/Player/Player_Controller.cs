@@ -13,8 +13,7 @@ public class Player_Controller : MonoBehaviour
     // Refer to other class to get data
     Player player;
 
-    public SFXAudioManager audioManager;
-
+    public PlayingSceneSFX audioManager;
     // Properties
     [SerializeField] float walk_Velocity;
     [SerializeField] float jump_Force;
@@ -38,6 +37,7 @@ public class Player_Controller : MonoBehaviour
         velocity_Control();
         getInputs();
         processInputs();
+        walkingSound();
     }
 
 
@@ -100,5 +100,9 @@ public class Player_Controller : MonoBehaviour
         player.canJump = false;
     }
 
-
+    void walkingSound()
+    {
+        if(input_Horizontal != 0 && player.canJump)
+        audioManager.startPlayingFootstep();
+    }
 }

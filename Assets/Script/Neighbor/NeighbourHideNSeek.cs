@@ -48,6 +48,5 @@ public class NeighbourHideNSeek : MonoBehaviour
         {
             isThere = false;
         }
-        print(timeStamp);
     }
 }
