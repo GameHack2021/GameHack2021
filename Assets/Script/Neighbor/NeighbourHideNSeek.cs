@@ -43,26 +43,13 @@ public class NeighbourHideNSeek : MonoBehaviour
             nextRandomTime = Random.Range(minimalTime, maximalTime);
             timeStamp = 0;
             isThere = true;
-            transform.parent.parent.GetComponent<Door>().canAccept = true;
+            transform.parent.parent.GetComponent<Door>().canAccept = false;
         }
         if(timeStamp >= 14)
         {
             isThere = false;
-            transform.parent.parent.GetComponent<Door>().canAccept = false;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("hitsth");
-        if(other.gameObject.tag == "Door"){
-            Debug.Log("hitsth");
             transform.parent.parent.GetComponent<Door>().canAccept = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        if(other.gameObject.tag == "Box"){
-            transform.parent.parent.GetComponent<Door>().canAccept = false;
-        }
-    }
 }

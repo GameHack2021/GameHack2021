@@ -9,11 +9,13 @@ public class Door : MonoBehaviour
     public bool canDeliver;
 
     Collider2D personCollider;
+    Player_Interaction player_Interaction;
 
     private void Start() {
         accepted = false;
         canAccept = false;
         personCollider = GameObject.Find("control").GetComponent<Collider2D>();
+        player_Interaction = GameObject.Find("Player").GetComponent<Player_Interaction>();
     }
 
     private void Update() {
@@ -21,6 +23,7 @@ public class Door : MonoBehaviour
             if(canDeliver && Input.GetButtonDown("Fire1")){
                 if(canAccept){
                     accepted = true;
+                    player_Interaction.cat_Carried = player_Interaction.cat_Carried -1;
                     Debug.Log("accepted");
                 }else{
                     // TODO:Player rejectanimation
@@ -35,7 +38,7 @@ public class Door : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(gameObject.tag);
+
         if(other.gameObject.tag == "Player"){
             canDeliver = true;
         }

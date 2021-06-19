@@ -7,6 +7,7 @@ TagManager:
   - Cat
   - Door
   - Home
+  - Box
   layers:
   - Default
   - TransparentFX

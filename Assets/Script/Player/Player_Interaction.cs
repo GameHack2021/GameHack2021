@@ -8,7 +8,7 @@ public class Player_Interaction : MonoBehaviour
     
     // Interaction objects variablex
     public int catsToTake;
-    int cat_Carried;
+    public int cat_Carried;
     bool canTakeCats;
 
 
