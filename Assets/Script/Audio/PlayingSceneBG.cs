@@ -8,10 +8,12 @@ public class PlayingSceneBG : MusicPlayingUtilities
     public AudioClip calm;
     public AudioClip joy;
     public AudioClip sadness;
+    public AudioClip night_amb;
 
     void Start()
     {
-        StartCoroutine(LoopAudio(spaceship));
+        StartCoroutine(LoopAudio(spaceship, 0.05f));
+        StartCoroutine(LoopAudio(night_amb, 0.03f));
     }
 
 

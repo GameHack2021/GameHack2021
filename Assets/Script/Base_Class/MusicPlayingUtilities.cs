@@ -6,25 +6,26 @@ public class MusicPlayingUtilities : MonoBehaviour
 {
     AudioSource audioSource;
 
-    public bool stopPlaying;
+    public bool allowPlaying;
+    float volumeMultiplier = 1.0f;
 
     private void Awake()
     {
-        stopPlaying = false;
+        allowPlaying = false;
     }
 
     private void Update()
     {
-            print(stopPlaying);
+        print(allowPlaying);
 
     }
-    public IEnumerator LoopAudio(AudioClip audioClip)
+    public IEnumerator LoopAudio(AudioClip audioClip, float volume)
     {
         audioSource = GetComponent<AudioSource>();
         float length = audioClip.length;
         while (true)
         {
-            audioSource.PlayOneShot(audioClip, 0.4f);
+            audioSource.PlayOneShot(audioClip, volume);
             yield return new WaitForSeconds(length);
         }
     }
@@ -37,20 +38,26 @@ public class MusicPlayingUtilities : MonoBehaviour
         float length2 = audioClip2.length;
         while (true)
         {
-            
-            if (playFirstOne)
+            if (allowPlaying)
             {
-                playFirstOne = false;
-                audioSource.PlayOneShot(audioClip1, 1f);
-                yield return new WaitForSeconds(length1);
-
+                if (playFirstOne)
+                {
+                    playFirstOne = false;
+                    audioSource.PlayOneShot(audioClip1, 0.07f * volumeMultiplier);
+                    yield return new WaitForSeconds(length1 * 3);
+                }
+                else
+                {
+                    playFirstOne = true;
+                    audioSource.PlayOneShot(audioClip2, 0.10f * volumeMultiplier);
+                    yield return new WaitForSeconds(length2 * 3);
+                }
             }
             else
             {
-                playFirstOne = true;
-                audioSource.PlayOneShot(audioClip2, 1f);
-                yield return new WaitForSeconds(length2);
+                yield return null;
             }
+
 
 
         }

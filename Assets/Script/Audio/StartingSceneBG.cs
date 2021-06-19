@@ -8,7 +8,7 @@ public class StartingSceneBG : MusicPlayingUtilities
 
     void Start()
     {
-        StartCoroutine(LoopAudio(clip));
+        StartCoroutine(LoopAudio(clip, 0.1f));
     }
 
 }

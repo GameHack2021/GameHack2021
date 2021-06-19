@@ -1233,9 +1233,10 @@ MonoBehaviour:
   door_close_1: {fileID: 8300000, guid: e1b26fee2f0ad8a4f9f7272d90368e65, type: 3}
   door_close_2: {fileID: 8300000, guid: 6b92bec3c1d11b344974f6ae6405b35e, type: 3}
   door_open: {fileID: 8300000, guid: 5dd97f75ddb6485429d6b03a5bc84bb0, type: 3}
-  footstep_01: {fileID: 8300000, guid: 6a715b79bec1cd946857c96620fb1988, type: 3}
-  footstep_02: {fileID: 8300000, guid: f97146042c5a333489eee0662ff4fbda, type: 3}
-  jumping: {fileID: 8300000, guid: 76c8439257f298348b28ce8f06b53c99, type: 3}
+  footstep_01: {fileID: 8300000, guid: a46c718dd71e0f1458d23787e0b4a8f3, type: 3}
+  footstep_02: {fileID: 8300000, guid: 65dcf4b274d785440ba2a0676baf3037, type: 3}
+  jumping: {fileID: 8300000, guid: 932fd5cddb27d0c40a3528313d49595f, type: 3}
+  landing: {fileID: 8300000, guid: 76c8439257f298348b28ce8f06b53c99, type: 3}
 --- !u!82 &1706559775
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1796,7 +1797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2084244345
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1985,10 +1986,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopPlaying: 0
-  beginning: {fileID: 8300000, guid: 257c855483bd762449dceb88b2a28f07, type: 3}
+  spaceship: {fileID: 8300000, guid: 95c469e9a27b92d4bac1f981bce3f8c0, type: 3}
   calm: {fileID: 8300000, guid: f54fe37fd5e274c49bbe4b66f073fa56, type: 3}
   joy: {fileID: 8300000, guid: 525390ef40950744d9d571762fbe4889, type: 3}
   sadness: {fileID: 8300000, guid: 5b4c584716cb3a4479eedf469a289bf2, type: 3}
+  night_amb: {fileID: 8300000, guid: 80fa57f842409944eb4211503e1cad9f, type: 3}
 --- !u!4 &2109324044
 Transform:
   m_ObjectHideFlags: 0
@@ -2120,6 +2122,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -3.23
       objectReference: {fileID: 0}
+    - target: {fileID: 1394296550104144042, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
+      propertyPath: hintText
+      value: 
+      objectReference: {fileID: 2084244346}
     - target: {fileID: 3028517230666568897, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.54

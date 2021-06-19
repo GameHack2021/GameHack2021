@@ -8,6 +8,7 @@ public class Player_Controller : MonoBehaviour
     float input_Horizontal;
     float input_Vertical;
     bool input_Jump;
+    bool init_sound = false;
     public bool isPlayingSteppingSounds = false;
 
     // Refer to other class to get data
@@ -26,6 +27,7 @@ public class Player_Controller : MonoBehaviour
 
     void Awake()
     {
+
         player = GetComponent<Player>();
         //audioManager = GameObject.Find("SoundManagers/SFXAudioManager").GetComponent<SFXAudioManager>();
 
@@ -92,7 +94,7 @@ public class Player_Controller : MonoBehaviour
     }
 
     void jump(){
-        //audioManager.playJumping();
+        audioManager.playJumping();
         Vector2 updated_Velocity = new Vector2(player.mRigidBody.velocity.x, jump_Force);
         player.mRigidBody.velocity = updated_Velocity;
         player.canJump = false;
@@ -113,13 +115,20 @@ public class Player_Controller : MonoBehaviour
         {
             if (!isPlayingSteppingSounds)
             {
+                if (!init_sound)
+                {
+                    audioManager.startPlayingFootstep();
+                    init_sound = true;
+                }
+
                 isPlayingSteppingSounds = true;
-                //audioManager.startPlayingFootstep();
+                audioManager.allowPlaying = true;
+
             }
         }
         else{
             isPlayingSteppingSounds = false;
-            //audioManager.stopPlayingFootstep();
+            audioManager.allowPlaying = false;
         }
     }
 }

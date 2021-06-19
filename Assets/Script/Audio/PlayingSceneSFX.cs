@@ -10,6 +10,7 @@ public class PlayingSceneSFX : MusicPlayingUtilities
     public AudioClip footstep_01;
     public AudioClip footstep_02;
     public AudioClip jumping;
+    public AudioClip landing;
     AudioSource audioSource;
 
 
@@ -18,9 +19,13 @@ public class PlayingSceneSFX : MusicPlayingUtilities
         audioSource = GetComponent<AudioSource>();
     }
 
+    public void playJumping()
+    {
+        audioSource.PlayOneShot(jumping, 0.03f);
+    }
     public void playLanding()
     {
-        audioSource.PlayOneShot(jumping, 1f);
+        audioSource.PlayOneShot(landing, 0.2f);
     }
 
     public void startPlayingFootstep()
@@ -31,6 +36,6 @@ public class PlayingSceneSFX : MusicPlayingUtilities
 
     public void stopPlayingFootstep()
     {
-        stopPlaying = true;
+        allowPlaying = true;
     }
 }
