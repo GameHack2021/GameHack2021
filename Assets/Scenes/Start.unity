@@ -907,13 +907,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1889097571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de40391b36ece6d4592f3fa6a5948dbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 32ffc56205407b849be3ea1954698c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beginning: {fileID: 8300000, guid: 257c855483bd762449dceb88b2a28f07, type: 3}
-  calm: {fileID: 8300000, guid: f54fe37fd5e274c49bbe4b66f073fa56, type: 3}
-  joy: {fileID: 8300000, guid: 525390ef40950744d9d571762fbe4889, type: 3}
-  sadness: {fileID: 8300000, guid: 5b4c584716cb3a4479eedf469a289bf2, type: 3}
+  clip: {fileID: 8300000, guid: 5b4c584716cb3a4479eedf469a289bf2, type: 3}
 --- !u!1 &1919176435
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,6 @@ public class StartGameManager : MonoBehaviour
     void ChangeScene()
     {
         print(1);
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
 }
