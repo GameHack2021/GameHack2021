@@ -40,7 +40,7 @@ public class NeighbourDetecting : MonoBehaviour
         if (timeStamp >= nextRandomTime)
         {
             neighbourWalking.SetBool("start", true);
-            print("It's him! He's there!");
+            //print("It's him! He's there!");
             nextRandomTime = Random.Range(minimalTime, maximalTime);
             timeStamp = 0;
         }

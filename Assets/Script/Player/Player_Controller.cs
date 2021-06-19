@@ -13,6 +13,8 @@ public class Player_Controller : MonoBehaviour
     // Refer to other class to get data
     Player player;
 
+    public SFXAudioManager audioManager;
+
     // Properties
     [SerializeField] float walk_Velocity;
     [SerializeField] float jump_Force;
@@ -23,9 +25,10 @@ public class Player_Controller : MonoBehaviour
     // Change depends on the state
     float current_Velocity_H;
 
-    void Start()
+    void Awake()
     {
         player = GetComponent<Player>();
+        //audioManager = GameObject.Find("SoundManagers/SFXAudioManager").GetComponent<SFXAudioManager>();
 
     }
 
@@ -81,6 +84,7 @@ public class Player_Controller : MonoBehaviour
     }
 
     void jump(){
+        audioManager.playJumping();
         Vector2 updated_Velocity = new Vector2(player.mRigidBody.velocity.x, jump_Force);
         player.mRigidBody.velocity = updated_Velocity;
         player.canJump = false;

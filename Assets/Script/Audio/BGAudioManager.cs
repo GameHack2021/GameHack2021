@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayAudioInBG : MonoBehaviour
+public class BGAudioManager : MonoBehaviour
 {
     public AudioClip beginning;
     public AudioClip calm;
@@ -25,7 +25,6 @@ public class PlayAudioInBG : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         float length = audioClip.length;
-        print(1);
         while (true)
         {
             audioSource.PlayOneShot(audioClip, 0.4f);
