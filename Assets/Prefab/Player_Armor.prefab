@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2752005811804090523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.58, y: -4.097025, z: 3.0342777}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 842498054882681024}
   m_Father: {fileID: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5a487e24bbfd8459ec5094a61887cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
+  isPlayingSteppingSounds: 0
   walk_Velocity: 5
   jump_Force: 12
   jump_Velocity_H: 5
@@ -316,11 +316,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3278674614053649664, guid: b1eec5bbba5954ce59c3c7801c66ead2, type: 3}
       propertyPath: m_LocalScale.x
-      value: -2.639351
+      value: -2.339351
       objectReference: {fileID: 0}
     - target: {fileID: 3278674614053649664, guid: b1eec5bbba5954ce59c3c7801c66ead2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.639351
+      value: 2.339351
       objectReference: {fileID: 0}
     - target: {fileID: 3278674614053649664, guid: b1eec5bbba5954ce59c3c7801c66ead2, type: 3}
       propertyPath: m_LocalPosition.x
