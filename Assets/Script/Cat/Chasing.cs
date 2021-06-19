@@ -21,11 +21,11 @@ public class Chasing : MonoBehaviour
     void CounterMovement()
     {
         float dst = Vector2.Distance(player.transform.position, transform.position);
-        if (dst >= 5f)
-            Chase();
+        if (dst >= 4f)
+            Chase(dst);
     }
 
-    void Chase()
+    void Chase(float dst)
     {
         Vector2 direction = (player.transform.position - transform.position);
         Vector2 xDirection = new Vector2();
@@ -35,6 +35,6 @@ public class Chasing : MonoBehaviour
         yDirection.y = direction.y;
         yDirection = yDirection.normalized;
 
-        rb.velocity = xDirection * 2f;
+        rb.velocity = xDirection * 2f * (dst - 4);
     }
 }
