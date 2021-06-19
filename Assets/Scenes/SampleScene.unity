@@ -685,7 +685,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2863401139702067461, guid: f2ff593e9c6569648920639fe60b7e7f, type: 3}
       propertyPath: m_Name
-      value: Cat (1)
+      value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 2863401139702067465, guid: f2ff593e9c6569648920639fe60b7e7f, type: 3}
       propertyPath: m_RootOrder
@@ -1366,7 +1366,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2863401139702067461, guid: f2ff593e9c6569648920639fe60b7e7f, type: 3}
       propertyPath: m_Name
-      value: Cat (2)
+      value: Monster1
       objectReference: {fileID: 0}
     - target: {fileID: 2863401139702067462, guid: f2ff593e9c6569648920639fe60b7e7f, type: 3}
       propertyPath: m_IsTrigger
@@ -1484,7 +1484,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2863401139702067461, guid: f2ff593e9c6569648920639fe60b7e7f, type: 3}
       propertyPath: m_Name
-      value: Cat
+      value: Monster2
       objectReference: {fileID: 0}
     - target: {fileID: 2863401139702067465, guid: f2ff593e9c6569648920639fe60b7e7f, type: 3}
       propertyPath: m_RootOrder
