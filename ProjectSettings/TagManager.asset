@@ -44,6 +44,24 @@ TagManager:
   - name: BackGround
     uniqueID: 2550596225
     locked: 0
+  - name: BGobj
+    uniqueID: 3397702205
+    locked: 0
+  - name: ground
+    uniqueID: 3632787731
+    locked: 0
+  - name: door
+    uniqueID: 4044879585
+    locked: 0
+  - name: platform
+    uniqueID: 4047113227
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: character
+    uniqueID: 709190033
+    locked: 0
+  - name: effect
+    uniqueID: 3382484241
     locked: 0
