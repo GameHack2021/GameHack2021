@@ -462,6 +462,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cha
       objectReference: {fileID: 0}
+    - target: {fileID: 7573831300888823078, guid: b1eec5bbba5954ce59c3c7801c66ead2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1eec5bbba5954ce59c3c7801c66ead2, type: 3}
 --- !u!1001 &381202478
@@ -2406,7 +2410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &2135615153
 Animator:
   serializedVersion: 3
@@ -2498,6 +2502,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2403918209437794132, guid: 59d9ca1b684c146e582da8a747aafab1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403918209437794132, guid: 59d9ca1b684c146e582da8a747aafab1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403918209437794132, guid: 59d9ca1b684c146e582da8a747aafab1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -912483055
+      objectReference: {fileID: 0}
     - target: {fileID: 2403918209437794133, guid: 59d9ca1b684c146e582da8a747aafab1, type: 3}
       propertyPath: m_RootOrder
       value: 8
