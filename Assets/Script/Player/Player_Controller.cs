@@ -8,7 +8,7 @@ public class Player_Controller : MonoBehaviour
     float input_Horizontal;
     float input_Vertical;
     bool input_Jump;
-
+    public bool isPlayingSteppingSounds = false;
 
     // Refer to other class to get data
     Player player;
@@ -85,24 +85,41 @@ public class Player_Controller : MonoBehaviour
 
     // Controll players horizontal move
     void move_H(){
-
         Vector2 updated_Velocity = new Vector2(input_Horizontal*current_Velocity_H,player.mRigidBody.velocity.y);
         player.mRigidBody.velocity =updated_Velocity;
 
         player.mAnimCon.changeAnim("Running", true);
- 
     }
 
     void jump(){
-        audioManager.playJumping();
+        //audioManager.playJumping();
         Vector2 updated_Velocity = new Vector2(player.mRigidBody.velocity.x, jump_Force);
         player.mRigidBody.velocity = updated_Velocity;
         player.canJump = false;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            audioManager.playLanding();
+        }
+        //audioManager.playLanding();
+
+    }
     void walkingSound()
     {
-        if(input_Horizontal != 0 && player.canJump)
-        audioManager.startPlayingFootstep();
+        if (input_Horizontal != 0 && player.canJump)
+        {
+            if (!isPlayingSteppingSounds)
+            {
+                isPlayingSteppingSounds = true;
+                audioManager.startPlayingFootstep();
+            }
+        }
+        else{
+            isPlayingSteppingSounds = false;
+            audioManager.stopPlayingFootstep();
+        }
     }
 }
