@@ -26,7 +26,7 @@ public class Player_Controller : MonoBehaviour
     void Start()
     {
         player = GetComponent<Player>();
-
+        Physics.gravity = new Vector3(0, -5.0F, 0);
     }
 
     // Update is called once per frame
