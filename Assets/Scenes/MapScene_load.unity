@@ -1990,10 +1990,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    - target: {fileID: 2364310039774213524, guid: ff94401cd94bd104aa00417a750f8da4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2364310039774213525, guid: ff94401cd94bd104aa00417a750f8da4, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2037,14 +2033,6 @@ PrefabInstance:
     - target: {fileID: 2364310039774213525, guid: ff94401cd94bd104aa00417a750f8da4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6289815597437849813, guid: ff94401cd94bd104aa00417a750f8da4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7855001752308753105, guid: ff94401cd94bd104aa00417a750f8da4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff94401cd94bd104aa00417a750f8da4, type: 3}
