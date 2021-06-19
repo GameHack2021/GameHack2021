@@ -15,7 +15,7 @@ public class CloseUpToDoorDetection : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             isPlayerInside = true;
-            hintText.gameObject.SetActive(true);
+            // hintText.gameObject.SetActive(true);
         }
     }
 
@@ -24,7 +24,7 @@ public class CloseUpToDoorDetection : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             isPlayerInside = false;
-            hintText.gameObject.SetActive(false);
+            // hintText.gameObject.SetActive(false);
         }
     }
 }

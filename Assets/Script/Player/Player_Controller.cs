@@ -14,7 +14,7 @@ public class Player_Controller : MonoBehaviour
     // Refer to other class to get data
     Player player;
 
-    public PlayingSceneSFX audioManager;
+    PlayingSceneSFX audioManager;
     // Properties
     [SerializeField] float walk_Velocity;
     [SerializeField] float jump_Force;
@@ -29,6 +29,7 @@ public class Player_Controller : MonoBehaviour
     {
 
         player = GetComponent<Player>();
+        audioManager = GameObject.Find("SoundManagers/SFXAudioManager").gameObject.GetComponent<PlayingSceneSFX>();
         //audioManager = GameObject.Find("SoundManagers/SFXAudioManager").GetComponent<SFXAudioManager>();
 
     }
