@@ -26,6 +26,7 @@ public class Player_Controller : MonoBehaviour
     void Start()
     {
         player = GetComponent<Player>();
+
     }
 
     // Update is called once per frame
@@ -48,6 +49,8 @@ public class Player_Controller : MonoBehaviour
 
         if(Mathf.Abs(input_Horizontal) > 0 ){
             move_H();
+        }else{
+            player.mAnimCon.changeAnim("Running", false);
         }
 
         if(input_Jump && player.canJump){
@@ -72,6 +75,8 @@ public class Player_Controller : MonoBehaviour
 
         Vector2 updated_Velocity = new Vector2(input_Horizontal*current_Velocity_H,player.mRigidBody.velocity.y);
         player.mRigidBody.velocity =updated_Velocity;
+
+        player.mAnimCon.changeAnim("Running", true);
  
     }
 

@@ -7,7 +7,7 @@ public class Player : Character
     void Start()
     {
 
-        mAnimCon = new AnimCon(GetComponent<Animator>());
+        mAnimCon = new AnimCon(GameObject.Find("UnitRoot").GetComponent<Animator>());
         mRigidBody = GetComponent<Rigidbody2D>();
         mCollider = GetComponent<Collider2D>();
         mTransform = GetComponent<Transform>();
@@ -16,35 +16,36 @@ public class Player : Character
         canJump = true;
         onGround = true;
 
-    } 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+    }
 
     // Manage the state of the player
-    void stateDetect()
-    {
-        if (!onGround)
-        {
-            canJump = false;
-        }
+    void stateDetect(){
+         if(!onGround){
+             canJump = false;
+         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (LayerMask.LayerToName(other.gameObject.layer) == "Ground")
-        {
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(LayerMask.LayerToName(other.gameObject.layer) == "Ground"){
             onGround = true;
             canWalk = true;
-            canJump = true;
 
+            if(canJump == false){
+                canJump = true;
+            }
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (LayerMask.LayerToName(other.gameObject.layer) == "Ground")
-        {
+    private void OnCollisionExit2D(Collision2D other) {
+        if(other.gameObject.layer == LayerMask.GetMask("Ground")){
             onGround = false;
             canWalk = false;
-            canJump = false;
         }
     }
 }

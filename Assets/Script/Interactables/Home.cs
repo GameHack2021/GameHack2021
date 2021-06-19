@@ -17,9 +17,9 @@ public class Home : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        int catTaken = 0;
-        if (other.gameObject.tag == "Player" && (catTaken < catsCreated)){
-            catTaken = other.transform.GetComponent<Player_Interaction>().catsToTake;
+        int catTaken = other.transform.GetComponent<Player_Interaction>().catsToTake;
+        
+        if(other.gameObject.tag == "Player" && (catTaken < catsCreated)){
             catsCreated = catsCreated - catTaken;
         }else{
             // TODO: show there are no more cats to be taken
