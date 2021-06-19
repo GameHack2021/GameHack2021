@@ -5,7 +5,7 @@ using UnityEngine;
 public class Chasing : MonoBehaviour
 {
     public float minChasingDistanceInX = 4.0f;
-    public float minChasingDistanceInY = 3.5f;
+    public float minChasingDistanceInY = 1.5f;
     public float chasingSpeed = 2.0f;
     public float jumpingVel = 12f;
 
@@ -71,6 +71,7 @@ public class Chasing : MonoBehaviour
 
     void ChaseInY(float dst)
     {
+            print(dst - previousY);
         if (dst - previousY < 0 && !jumping)
         {
             Vector2 aimVelocity = new Vector2();
