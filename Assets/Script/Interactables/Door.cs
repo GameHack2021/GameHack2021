@@ -11,6 +11,8 @@ public class Door : MonoBehaviour
     Collider2D personCollider;
     Player_Interaction player_Interaction;
 
+    
+
     private void Start() {
         accepted = false;
         canAccept = false;
