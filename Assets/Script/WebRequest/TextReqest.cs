@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 public class TextReqest : MonoBehaviour
 {
     InputField outputArea;
-    string myWord = "ÎâãëÐù";
+    string myWord = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 
     public class SendType
     {
@@ -24,10 +24,15 @@ public class TextReqest : MonoBehaviour
         public List<string> result;
     }
 
+    public class PlayerInfo{
+        public string playerName;
+        public string playerEmail;
+    }
+
     public byte[] SendtypeToBytes(SendType s)
     {
         string json = JsonUtility.ToJson(s);
-        byte[] postData = System.Text.Encoding.UTF8.GetBytes(json); // °Ñ×Ö·û´®×ª»»ÎªbypeÊý×é
+        byte[] postData = System.Text.Encoding.UTF8.GetBytes(json); // ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½×ªï¿½ï¿½Îªbypeï¿½ï¿½ï¿½ï¿½
         return postData;
     }
 
@@ -36,6 +41,26 @@ public class TextReqest : MonoBehaviour
         ReceiveType rec = JsonUtility.FromJson<ReceiveType>(t);
         string words = myWord + rec.result[0];
         return words;
+    }
+
+    UnityWebRequest createUser(string username){
+        string uri = "http://47.98.203.153/api/player/";
+
+        PlayerInfo sendJsonData = new PlayerInfo();
+        sendJsonData.playerEmail= username;
+        sendJsonData.playerName = username;
+
+        using UnityWebRequest request = UnityWebRequest.Post(uri, UnityWebRequest.kHttpVerbPOST);
+        request.chunkedTransfer = false;
+
+        string json = JsonUtility.ToJson(sendJsonData);
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
+        request.uploadHandler = new UploadHandlerRaw(jsonToSend);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        return request;
+
     }
 
     UnityWebRequest SetRequests()
