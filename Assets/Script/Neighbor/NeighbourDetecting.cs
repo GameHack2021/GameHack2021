@@ -7,7 +7,7 @@ public class NeighbourDetecting : MonoBehaviour
     Animator neighbourWalking;
     float timeStamp = 0;
     float minimalTime = 7f;
-    float maximalTime = 20f;
+    float maximalTime = 13f;
 
     float nextRandomTime = 0;
     private void Awake()
@@ -44,7 +44,5 @@ public class NeighbourDetecting : MonoBehaviour
             nextRandomTime = Random.Range(minimalTime, maximalTime);
             timeStamp = 0;
         }
-        print(timeStamp);
-
     }
 }
