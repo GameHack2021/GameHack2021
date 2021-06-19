@@ -44,7 +44,6 @@ public class Player_Controller : MonoBehaviour
     void getInputs(){
         input_Horizontal = Input.GetAxis("Horizontal");
         input_Vertical = Input.GetAxis("Vertical");
-
         input_Jump = Input.GetButtonDown("Jump");
     }
 
@@ -58,6 +57,12 @@ public class Player_Controller : MonoBehaviour
 
         if(input_Jump && player.canJump){
             jump();
+        }
+
+        if(input_Horizontal == 0 && input_Vertical == 0 && player.canJump)
+        {
+            Vector2 updated_Velocity = new Vector2(0, player.mRigidBody.velocity.y);
+            player.mRigidBody.velocity = updated_Velocity;
         }
     }
 
