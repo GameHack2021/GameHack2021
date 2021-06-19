@@ -50,4 +50,16 @@ public class NeighbourHideNSeek : MonoBehaviour
         }
         print(timeStamp);
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "Box"){
+            transform.parent.parent.GetComponent<Door>().canAccept = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if(other.gameObject.tag == "Box"){
+            transform.parent.parent.GetComponent<Door>().canAccept = false;
+        }
+    }
 }
