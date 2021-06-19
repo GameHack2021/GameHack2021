@@ -8,7 +8,7 @@ public class Player_Interaction : MonoBehaviour
     
     // Interaction objects variablex
     public int catsToTake;
-    int cat_Carried;
+    public int cat_Carried;
     bool canTakeCats;
 
 
@@ -39,12 +39,6 @@ public class Player_Interaction : MonoBehaviour
             cat_Carried = cat_Carried + 1;
         }
 
-        if(other.gameObject.tag == "Door"){
-            if(!other.gameObject.GetComponent<Door>().accepted){
-                other.gameObject.GetComponent<Door>().accepted = true;
-                cat_Carried = cat_Carried -1;
-            }
-        }
 
         Debug.Log("Carried cat:"+cat_Carried);
     }

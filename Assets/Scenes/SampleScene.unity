@@ -1358,8 +1358,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45863d1a0e0329542aad45a8ca188de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door_close: {fileID: 8300000, guid: 9dfa668be45eb694f95a97d3cb4abd11, type: 3}
+  stopPlaying: 0
+  door_close_1: {fileID: 0}
+  door_close_2: {fileID: 0}
   door_open: {fileID: 8300000, guid: 5dd97f75ddb6485429d6b03a5bc84bb0, type: 3}
+  footstep_01: {fileID: 0}
+  footstep_02: {fileID: 0}
   jumping: {fileID: 8300000, guid: 7caa8ed8ae71c23408ac65922ff39053, type: 3}
 --- !u!82 &1706559775
 AudioSource:
@@ -2109,6 +2113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de40391b36ece6d4592f3fa6a5948dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopPlaying: 0
   beginning: {fileID: 8300000, guid: 257c855483bd762449dceb88b2a28f07, type: 3}
   calm: {fileID: 8300000, guid: f54fe37fd5e274c49bbe4b66f073fa56, type: 3}
   joy: {fileID: 8300000, guid: 525390ef40950744d9d571762fbe4889, type: 3}
@@ -2222,7 +2227,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 879889378684318776, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_Size.x
-      value: 0.35405597
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 879889378684318776, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_Offset.x
