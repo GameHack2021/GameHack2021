@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NeighbourHideNSeek : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class NeighbourHideNSeek : MonoBehaviour
     float nextRandomTime = 0;
 
     public bool isThere = true;
+
     private void Awake()
     {
         neighbourWalking = GetComponent<Animator>();
