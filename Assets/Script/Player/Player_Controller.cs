@@ -65,10 +65,15 @@ public class Player_Controller : MonoBehaviour
         if(player.canWalk){
             current_Velocity_H = walk_Velocity;
         }
-
+        
         // TODO: Need to change the condition
         if(!player.canJump){
-            current_Velocity_H = jump_Velocity_H;
+            //current_Velocity_H = jump_Velocity_H;
+            if (Input.GetButtonUp("Jump") && player.mRigidBody.velocity.y > 0)
+            {
+                Vector2 updated_Velocity = new Vector2(player.mRigidBody.velocity.x, player.mRigidBody.velocity.y / 2);
+                player.mRigidBody.velocity = updated_Velocity;
+            }
         }
     }
 
@@ -89,4 +94,6 @@ public class Player_Controller : MonoBehaviour
         player.mRigidBody.velocity = updated_Velocity;
         player.canJump = false;
     }
+
+
 }

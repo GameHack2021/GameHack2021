@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class NeighbourHideNSeek : MonoBehaviour
 {
@@ -17,7 +16,6 @@ public class NeighbourHideNSeek : MonoBehaviour
     float nextRandomTime = 0;
 
     public bool isThere = true;
-    public float eeTime = 13;
     private void Awake()
     {
         neighbourWalking = GetComponent<Animator>();
@@ -44,7 +42,7 @@ public class NeighbourHideNSeek : MonoBehaviour
             timeStamp = 0;
             isThere = true;
         }
-        if(timeStamp >= eeTime)
+        if(timeStamp >= 14)
         {
             isThere = false;
         }

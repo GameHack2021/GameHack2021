@@ -1322,8 +1322,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0, y: 0.046998978}
+  m_Size: {x: 1, y: 1.906002}
   m_Direction: 0
 --- !u!50 &1456426284
 Rigidbody2D:
@@ -1444,8 +1444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 1706559774}
-  walk_Velocity: 5
-  jump_Force: 12
+  walk_Velocity: 6
+  jump_Force: 16
   jump_Velocity_H: 5
 --- !u!114 &1456426289
 MonoBehaviour:
@@ -2229,12 +2229,12 @@ GameObject:
   - component: {fileID: 2084244347}
   - component: {fileID: 2084244346}
   m_Layer: 5
-  m_Name: Text
+  m_Name: hint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2084244345
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2454,19 +2454,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 879889378684318776, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_Size.x
-      value: 0.9448259
+      value: 0.3759542
       objectReference: {fileID: 0}
     - target: {fileID: 879889378684318776, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_Offset.x
-      value: -0.023019895
+      value: -0.0026193485
       objectReference: {fileID: 0}
     - target: {fileID: 879889378684318778, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_Color.b
-      value: 0.64754283
+      value: 0.61960787
       objectReference: {fileID: 0}
     - target: {fileID: 879889378684318778, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_Color.g
-      value: 0.6179246
+      value: 0.8972396
       objectReference: {fileID: 0}
     - target: {fileID: 879889378684318778, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_Color.r
@@ -2476,6 +2476,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -3.23
       objectReference: {fileID: 0}
+    - target: {fileID: 1394296550104144042, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
+      propertyPath: hintText
+      value: 
+      objectReference: {fileID: 2084244346}
     - target: {fileID: 3240984032699667501, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: eeTime
       value: 14
