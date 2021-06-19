@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2364310039774213524}
   - component: {fileID: 2364310039774213527}
   - component: {fileID: 2364310039774213526}
+  - component: {fileID: 4585720626357803268}
   - component: {fileID: 7398351185860104870}
   m_Layer: 0
   m_Name: Door
@@ -134,6 +135,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.63}
   m_EdgeRadius: 0
+--- !u!114 &4585720626357803268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364310039774213521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80637b860b2cacd4992aabd238e848eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neighbourHideNSeek: {fileID: 0}
+  isPlayerInside: 0
 --- !u!114 &7398351185860104870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +357,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de630f7e5bf4c3d4ab2d0c4ada59ed1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  putDownRangeCollider: {fileID: 0}
+  isThere: 1
+  eeTime: 13
 --- !u!1 &6381376826868945233
 GameObject:
   m_ObjectHideFlags: 0
