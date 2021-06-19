@@ -274,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2941746417139859128, guid: 3b84abfc4df7c6846b8b20be4667ca80, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.48
+      value: -1.59
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b84abfc4df7c6846b8b20be4667ca80, type: 3}
@@ -2140,9 +2140,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 600191897}
     m_Modifications:
     - target: {fileID: 2752005811804090497, guid: f5e1846d617d8cd4592c937d2fd0f05e, type: 3}
+      propertyPath: jump_Force
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752005811804090497, guid: f5e1846d617d8cd4592c937d2fd0f05e, type: 3}
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1706559774}
+    - target: {fileID: 2752005811804090497, guid: f5e1846d617d8cd4592c937d2fd0f05e, type: 3}
+      propertyPath: walk_Velocity
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752005811804090497, guid: f5e1846d617d8cd4592c937d2fd0f05e, type: 3}
+      propertyPath: jump_Velocity_H
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752005811804090522, guid: f5e1846d617d8cd4592c937d2fd0f05e, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9258206
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752005811804090522, guid: f5e1846d617d8cd4592c937d2fd0f05e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.037089705
+      objectReference: {fileID: 0}
     - target: {fileID: 2752005811804090523, guid: f5e1846d617d8cd4592c937d2fd0f05e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2202,11 +2222,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 879889378684318776, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_Size.x
-      value: 0.9448259
+      value: 0.35405597
       objectReference: {fileID: 0}
     - target: {fileID: 879889378684318776, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_Offset.x
-      value: -0.023019895
+      value: -0.0037935525
       objectReference: {fileID: 0}
     - target: {fileID: 879889378684318778, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_Color.b
