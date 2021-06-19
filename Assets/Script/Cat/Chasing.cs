@@ -6,12 +6,15 @@ public class Chasing : MonoBehaviour
 {
     GameObject player;
     Rigidbody2D rb;
-
+    Collider2D playerCollider;
+    Collider2D myCollider;
     private void Awake()
     {
         player = GameObject.Find("Player");
+        playerCollider = player.GetComponent<Collider2D>();
+        myCollider = GetComponent<Collider2D>();
         rb = gameObject.GetComponent<Rigidbody2D>();
-
+        Physics2D.IgnoreCollision(playerCollider, myCollider, true);
     }
     private void Update()
     {
