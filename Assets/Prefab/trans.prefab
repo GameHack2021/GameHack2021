@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9201289750924425202
+--- !u!1 &5191302957381450728
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,36 +8,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2594596677858482987}
-  - component: {fileID: 8397432360417370169}
+  - component: {fileID: 5191302957381450729}
+  - component: {fileID: 5191302957381450730}
   m_Layer: 0
-  m_Name: ground_base
+  m_Name: trans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2594596677858482987
+--- !u!4 &5191302957381450729
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9201289750924425202}
+  m_GameObject: {fileID: 5191302957381450728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.3445, y: -5.27, z: 81.260666}
-  m_LocalScale: {x: 107.200005, y: 11.1, z: 1}
+  m_LocalPosition: {x: -6.449803, y: -1.4976536, z: 81.260666}
+  m_LocalScale: {x: 20, y: 1.53, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8397432360417370169
+--- !u!212 &5191302957381450730
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9201289750924425202}
+  m_GameObject: {fileID: 5191302957381450728}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -68,15 +68,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -662179565
-  m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 6678233889827809107, guid: c072def5095824a6cadf511af7a7d2f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingLayerID: -912483055
+  m_SortingLayer: 5
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 21300000, guid: 055b50ec13af74be9807bc0356fe2afd, type: 3}
+  m_Color: {r: 0.51174796, g: 0.7590731, b: 0.8679245, a: 0.8156863}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 1
-  m_Size: {x: 0.4, y: 0.4}
+  m_DrawMode: 0
+  m_Size: {x: 2, y: 1.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
