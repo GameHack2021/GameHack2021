@@ -23,7 +23,7 @@ public class Chasing : MonoBehaviour
     bool focused = false;
     private void Awake()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Characters/Player_Armor");
         playerCollider = player.GetComponent<Collider2D>();
         myCollider = GetComponent<Collider2D>();
         rb = gameObject.GetComponent<Rigidbody2D>();

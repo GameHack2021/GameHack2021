@@ -14,11 +14,11 @@ public class Door : MonoBehaviour
     public GameObject floatCat;
 
 
-    private void Start() {
+    private void Awake() {
         accepted = false;
         canAccept = false;
         personCollider = GameObject.Find("control").GetComponent<Collider2D>();
-        player_Interaction = GameObject.Find("Player").GetComponent<Player_Interaction>();
+        player_Interaction = GameObject.Find("Characters/Player_Armor").GetComponent<Player_Interaction>();
     }
 
     private void Update() {
