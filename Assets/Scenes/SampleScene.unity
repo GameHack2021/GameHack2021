@@ -2113,46 +2113,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 879889378684318776, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
-      propertyPath: m_Size.x
-      value: 0.89
-      objectReference: {fileID: 0}
-    - target: {fileID: 879889378684318776, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0037935525
-      objectReference: {fileID: 0}
-    - target: {fileID: 879889378684318778, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
-      propertyPath: m_Color.b
-      value: 0.64754283
-      objectReference: {fileID: 0}
-    - target: {fileID: 879889378684318778, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
-      propertyPath: m_Color.g
-      value: 0.6179246
-      objectReference: {fileID: 0}
-    - target: {fileID: 879889378684318778, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 879889378684318779, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028517230666568897, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028517230666568897, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028517230666568897, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3240984032699667501, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
-      propertyPath: eeTime
-      value: 14
-      objectReference: {fileID: 0}
     - target: {fileID: 7063034200553703001, guid: 25d7a1293e0c1d947aee6433631450aa, type: 3}
       propertyPath: m_RootOrder
       value: 6
