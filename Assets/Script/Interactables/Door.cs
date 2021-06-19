@@ -5,12 +5,14 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public bool accepted;
+    public bool canAccept;
+
+    Collider2D personCollider;
 
     private void Start() {
         accepted = false;
+        canAccept = false;
+        personCollider = GameObject.Find("control").GetComponent<Collider2D>();
     }
-    private void OnTriggerEnter2D(Collider2D other) {
-       
-    }
-
+    
 }
