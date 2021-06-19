@@ -294,6 +294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4188486689819688451, guid: 5a422f43d9c2d394bacc1741d0ba368b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4188486689819688455, guid: 5a422f43d9c2d394bacc1741d0ba368b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1226,12 +1230,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopPlaying: 0
-  door_close_1: {fileID: 0}
-  door_close_2: {fileID: 0}
+  door_close_1: {fileID: 8300000, guid: e1b26fee2f0ad8a4f9f7272d90368e65, type: 3}
+  door_close_2: {fileID: 8300000, guid: 6b92bec3c1d11b344974f6ae6405b35e, type: 3}
   door_open: {fileID: 8300000, guid: 5dd97f75ddb6485429d6b03a5bc84bb0, type: 3}
-  footstep_01: {fileID: 0}
-  footstep_02: {fileID: 0}
-  jumping: {fileID: 8300000, guid: 7caa8ed8ae71c23408ac65922ff39053, type: 3}
+  footstep_01: {fileID: 8300000, guid: 6a715b79bec1cd946857c96620fb1988, type: 3}
+  footstep_02: {fileID: 8300000, guid: f97146042c5a333489eee0662ff4fbda, type: 3}
+  jumping: {fileID: 8300000, guid: 76c8439257f298348b28ce8f06b53c99, type: 3}
 --- !u!82 &1706559775
 AudioSource:
   m_ObjectHideFlags: 0

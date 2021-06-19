@@ -18,7 +18,7 @@ public class PlayingSceneSFX : MusicPlayingUtilities
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void playJumping()
+    public void playLanding()
     {
         audioSource.PlayOneShot(jumping, 1f);
     }
@@ -26,6 +26,7 @@ public class PlayingSceneSFX : MusicPlayingUtilities
     public void startPlayingFootstep()
     {
         StartCoroutine(LoopFootStep(footstep_01, footstep_02)) ;
+        //StartCoroutine(LoopAudio(footstep_01));
     }
 
     public void stopPlayingFootstep()
