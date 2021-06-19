@@ -11,7 +11,8 @@ public class Door : MonoBehaviour
     Collider2D personCollider;
     Player_Interaction player_Interaction;
 
-    
+    public GameObject floatCat;
+
 
     private void Start() {
         accepted = false;
@@ -26,9 +27,11 @@ public class Door : MonoBehaviour
                 if(canAccept){
                     accepted = true;
                     player_Interaction.cat_Carried = player_Interaction.cat_Carried -1;
-                    Debug.Log("accepted");
+                    // Debug.Log("accepted");
                 }else{
-                    // TODO:Player rejectanimation
+                    Debug.Log("rejuect");
+                    GameObject temp = Instantiate(floatCat,transform);
+                    temp.transform.localPosition = new Vector3(0,0,0);
                 }
             }
         }
