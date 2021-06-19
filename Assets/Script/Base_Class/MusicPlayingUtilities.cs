@@ -14,11 +14,6 @@ public class MusicPlayingUtilities : MonoBehaviour
         allowPlaying = false;
     }
 
-    private void Update()
-    {
-        print(allowPlaying);
-
-    }
     public IEnumerator LoopAudio(AudioClip audioClip, float volume)
     {
         audioSource = GetComponent<AudioSource>();
