@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class Cat : Collectable
 {
-   
+    Rigidbody2D rb;
+    private void Start() {
+        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(0, 3f);
+        Destroy(gameObject, 4);
 
+    }
    
+   private void Update() {
+       rb.velocity = new Vector2(0, 3f);
+   }
 }

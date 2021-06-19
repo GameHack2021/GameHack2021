@@ -26,13 +26,12 @@ public class Door : MonoBehaviour
             if(canDeliver && Input.GetButtonDown("Fire1")){
                 if(canAccept){
                     accepted = true;
-                    player_Interaction.cat_Carried = player_Interaction.cat_Carried -1;
-                    // Debug.Log("accepted");
                 }else{
-                    Debug.Log("rejuect");
                     GameObject temp = Instantiate(floatCat,transform);
-                    temp.transform.localPosition = new Vector3(0,0,0);
+                    temp.transform.localPosition = new Vector3(0,0.42f,0);
                 }
+
+                player_Interaction.cat_Carried = player_Interaction.cat_Carried -1;
             }
         }
         
