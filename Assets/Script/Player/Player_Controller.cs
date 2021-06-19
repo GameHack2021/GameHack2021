@@ -114,12 +114,12 @@ public class Player_Controller : MonoBehaviour
             if (!isPlayingSteppingSounds)
             {
                 isPlayingSteppingSounds = true;
-                audioManager.startPlayingFootstep();
+                //audioManager.startPlayingFootstep();
             }
         }
         else{
             isPlayingSteppingSounds = false;
-            audioManager.stopPlayingFootstep();
+            //audioManager.stopPlayingFootstep();
         }
     }
 }
