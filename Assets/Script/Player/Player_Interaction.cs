@@ -15,7 +15,7 @@ public class Player_Interaction : MonoBehaviour
     Text winSign;
     Text fall;
 
-    float timeLimitation = 100f;
+    float timeLimitation = 200f;
     float timeStamp;
     // Interaction objects variablex
     public int catsToTake;
