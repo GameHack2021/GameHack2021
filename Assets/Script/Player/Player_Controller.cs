@@ -10,7 +10,7 @@ public class Player_Controller : MonoBehaviour
     bool input_Jump;
     bool init_sound = false;
     public bool isPlayingSteppingSounds = false;
-    bool getDownPermission = false;
+    public bool getDownPermission = false;
     public bool getDownRequest = false;
     public bool anotherRequestBegins = false;
 
@@ -132,6 +132,8 @@ public class Player_Controller : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
+            getDownPermission = false;
+
             audioManager.playLanding();
         }
         else
