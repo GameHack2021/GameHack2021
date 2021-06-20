@@ -4751,13 +4751,12 @@ PrefabInstance:
       propertyPath: jump_Velocity_H
       value: 9
       objectReference: {fileID: 0}
-<<<<<<< HEAD
+
     - target: {fileID: 2752005811804090499, guid: 778521d13266a417987593a59d34809f, type: 3}
       propertyPath: cat_Carried
       value: 1
       objectReference: {fileID: 0}
-=======
->>>>>>> parent of ecb9671 (Revert "Merge branch 'main' of https://github.com/GameHack2021/GameHack2021 into main")
+
     - target: {fileID: 2752005811804090523, guid: 778521d13266a417987593a59d34809f, type: 3}
       propertyPath: m_Name
       value: Player_Armor
