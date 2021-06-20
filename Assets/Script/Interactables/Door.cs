@@ -8,7 +8,10 @@ public class Door : MonoBehaviour
     public bool accepted;
     public bool canAccept;
     public bool canDeliver;
-    
+
+    PlayingSceneSFX audioManager;
+
+
     Text canDeliverHint;
     GameObject doorLight;
     Player_Interaction player_Interaction;
@@ -29,6 +32,8 @@ public class Door : MonoBehaviour
         catDroppingObj = transform.Find("catDrop").gameObject;
         catDroppingAnim = catDroppingObj.GetComponent<Animator>();
         catDroppingObj.SetActive(false);
+        audioManager = GameObject.Find("SoundManagers/SFXAudioManager").gameObject.GetComponent<PlayingSceneSFX>();
+
     }
 
     private void Start()
@@ -74,6 +79,7 @@ public class Door : MonoBehaviour
     {
         catDroppingObj.SetActive(true);
         catDroppingAnim.SetBool("PlayAnim", true);
+        audioManager.playBalloon();
         yield return new WaitForSeconds(0.5f);
         if (canAccept)
         {

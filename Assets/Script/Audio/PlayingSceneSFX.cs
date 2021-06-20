@@ -11,10 +11,17 @@ public class PlayingSceneSFX : MusicPlayingUtilities
     public AudioClip footstep_02;
     public AudioClip jumping;
     public AudioClip landing;
+    public AudioClip balloon;
+
 
     public void playJumping()
     {
         playAtVolume(jumping, 0.03f);
+    }
+
+    public void playBalloon()
+    {
+        playAtVolume(balloon, 0.1f);
     }
     public void playLanding()
     {
