@@ -23,6 +23,6 @@ public class StartGameManager : MonoBehaviour
     {
         // print(1);
         createUser.registUser(input.text);
-        SceneManager.LoadScene("level1");
+        SceneManager.LoadScene("newChat");
     }
 }

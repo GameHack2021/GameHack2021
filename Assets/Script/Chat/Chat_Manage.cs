@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Chat_Manage : MonoBehaviour
@@ -36,7 +37,7 @@ public class Chat_Manage : MonoBehaviour
       Cat = GameObject.Find("Cat");
       player_Talk = GameObject.Find("playerTalk").GetComponent<Text>();
       cat_Talk = GameObject.Find("catTalk").GetComponent<Text>();
-      input = GameObject.Find("inputText").GetComponent<Text>();
+      input = GameObject.Find("minputText").GetComponent<Text>();
 
       playerChatPosi = 0;
       catChatPosi = 0;
@@ -59,6 +60,10 @@ public class Chat_Manage : MonoBehaviour
    }
 
    void nextConversation(){
+      Debug.Log(playerChatPosi);
+      if(playerChatPosi == 5){
+         SceneManager.LoadScene("level1");
+      }
       if(Player.active){
          Cat.SetActive(true);
          Player.SetActive(false);
@@ -68,6 +73,8 @@ public class Chat_Manage : MonoBehaviour
          Player.SetActive(true);
          generatePlayerTalk();
       }
+
+
    }
 
    void generateCatTalk(){
@@ -77,9 +84,10 @@ public class Chat_Manage : MonoBehaviour
          getResponseAPI();
       }else{
          cat_Talk.text = catScript[catChatPosi];
-         catChatPosi = catChatPosi +1;
+         
       }
       
+      catChatPosi = catChatPosi +1;
       // Clear Input Field and hide the input
       input.transform.parent.gameObject.SetActive(false);
    }
@@ -90,8 +98,10 @@ public class Chat_Manage : MonoBehaviour
          player_Talk.text = "...";
       }else{
          player_Talk.text = playerScript[playerChatPosi];
-         playerChatPosi = playerChatPosi +1;
+         
       }
+
+      playerChatPosi = playerChatPosi +1;
 
    }
 
@@ -129,12 +139,21 @@ public class Chat_Manage : MonoBehaviour
         Debug.Log(response);
         Debug.Log(response.Split(':')[1]);
 
-        string answer = @response.Split(':')[1].Replace("}","").Replace("\"","");
-      //    var chars = answer.Split(new[]{@"\u"}, System.StringSplitOptions.RemoveEmptyEntries).Select(c => (char)Convert.ToInt32(c, 16)).ToArray();
-      // var output = new string(chars);
+        string answer = response.Split(':')[1].Replace("}","").Replace("\"","");
+        string converted = DecodeEncodedNonAsciiCharacters(answer);
+
 
 
         // Store userID as the information
-        cat_Talk.text = answer;
+        cat_Talk.text = converted;
+    }
+
+     static string DecodeEncodedNonAsciiCharacters( string value ) {
+        return System.Text.RegularExpressions.Regex.Replace(
+            value,
+            @"\\u(?<Value>[a-zA-Z0-9]{4})",
+            m => {
+                return ((char) int.Parse( m.Groups["Value"].Value, System.Globalization.NumberStyles.HexNumber )).ToString();
+            } );
     }
 }
