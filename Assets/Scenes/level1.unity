@@ -9067,6 +9067,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 379744036}
     m_Modifications:
+    - target: {fileID: 757633807, guid: 98331ddfe60760c40b0e6135df63cfcf, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 757633807, guid: 98331ddfe60760c40b0e6135df63cfcf, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 757633807, guid: 98331ddfe60760c40b0e6135df63cfcf, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 757633807, guid: 98331ddfe60760c40b0e6135df63cfcf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 757633807, guid: 98331ddfe60760c40b0e6135df63cfcf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 757633808, guid: 98331ddfe60760c40b0e6135df63cfcf, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 07f819539fa26f14fa9ae2fd8486ef55, type: 3}
     - target: {fileID: 1083469177487502155, guid: 98331ddfe60760c40b0e6135df63cfcf, type: 3}
       propertyPath: m_Name
       value: MainSceneUI
