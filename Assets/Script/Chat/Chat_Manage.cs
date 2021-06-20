@@ -34,6 +34,10 @@ public class Chat_Manage : MonoBehaviour
       public string text;
     }
 
+    public class runTurnStart{
+       public int playerId;
+    }
+
 
    private void Start() {
 
@@ -178,5 +182,37 @@ public class Chat_Manage : MonoBehaviour
    public void loadToMain(){
        SceneManager.LoadScene("level1");
        Info.convsProg = Info.convsProg +1;
+       runReqStart();
+
+    }
+
+     IEnumerator startRun(string url)
+    {
+        var request = new UnityWebRequest(url, "POST");
+        
+        runTurnStart sendJsonData = new runTurnStart();
+        sendJsonData.playerId = Info.userID;
+        
+        string bodyJsonString = JsonUtility.ToJson(sendJsonData);
+        byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
+        
+        request.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+        yield return request.SendWebRequest();
+
+        string response = request.downloadHandler.text;
+        Debug.Log(response);
+        int runID = int.Parse(response.Split(',')[1].Split(':')[1]);
+        
+        Debug.Log("RunID" + runID);
+
+        // Store userID as the information
+        Info.runID = runID;
+    }
+
+    public void runReqStart(){
+        StartCoroutine(startRun("http://47.98.203.153/api/start_run/"));
+
     }
 }
