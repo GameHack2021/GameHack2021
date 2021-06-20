@@ -413,14 +413,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 105350618}
-    - target: {fileID: 7905273970687802796, guid: 3f7654a3b8a760b4b88516e4abe0d785, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -56
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905273970687802796, guid: 3f7654a3b8a760b4b88516e4abe0d785, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -105
-      objectReference: {fileID: 0}
     - target: {fileID: 7905273970884107115, guid: 3f7654a3b8a760b4b88516e4abe0d785, type: 3}
       propertyPath: m_Name
       value: chatCanvas
@@ -429,14 +421,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1466176707}
-    - target: {fileID: 7905273970884107116, guid: 3f7654a3b8a760b4b88516e4abe0d785, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905273970884107116, guid: 3f7654a3b8a760b4b88516e4abe0d785, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -912483055
-      objectReference: {fileID: 0}
     - target: {fileID: 7905273970884107119, guid: 3f7654a3b8a760b4b88516e4abe0d785, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1186,66 +1170,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: catScript.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: endPoints.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: catScript.Array.data[2]
-      value: "\u6CA1\u6709\u5566\u55B5\uFF0C\u5DF2\u7ECF\u6709\u5F88\u591A\u5C0F\u732B\u627E\u5230\u5BB6\u5566\uFF5E"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: catScript.Array.data[3]
-      value: "\u60F3\u548C\u4F60\u804A\u804A\u5929\u55B5\uFF01"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: catScript.Array.data[4]
-      value: "\u8C22\u8C22\u4F60\uFF01\uFF01\u4E3A\u5C0F\u732B\u4EEC\u90FD\u627E\u5230\u4E86\u5BB6\uFF01\uFF01"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: catScript.Array.data[5]
-      value: "\uFF08\u55B5\u55B5\u55B5\u55B5~\uFF09"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: endPoints.Array.data[0]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: endPoints.Array.data[1]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: endPoints.Array.data[2]
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: endPoints.Array.data[3]
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: playerScript.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: playerScript.Array.data[2]
-      value: "\u963F\u55B5\u5BF9\u4E0D\u8D77\uFF0C\u8FD9\u4E2A\u7834\u7834\u7684\u5BB6\u517B\u4E0D\u4E0B\u4F60\u4EEC\uFF0C\u53EA\u80FD\u9001\u5C0F\u732B\u4EEC\u51FA\u53BB\uFF0C\uFF08\u6211\u771F\u6CA1\u7528\u3002\uFF09"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: playerScript.Array.data[3]
-      value: "\u5509"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: playerScript.Array.data[4]
-      value: "\u6211\u56DE\u6765\u4E86"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169990403496419399, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
-      propertyPath: playerScript.Array.data[5]
-      value: "\uFF08\u597D\u50CF\uFF0C\u5730\u4E0B\u5BA4\u7684\u5C0F\u7A9D\uFF0C\u633A\u6E29\u99A8\u7684\uFF0C\u56E0\u4E3A\u6709\u4E86\u4F60\u3002\u539F\u6765\uFF0C\u8FD9\u5C31\u662F\u5BB6\u5440\uFF01\uFF09"
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ba15d1970f460441a6228adcb9c05df, type: 3}
 --- !u!1 &946862100
@@ -1843,7 +1767,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
