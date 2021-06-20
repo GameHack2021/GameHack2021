@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player_Interaction : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Player_Interaction : MonoBehaviour
     Text catsSentSuccessfully;
     Text timeShowing;
 
-    float timeLimitation = 100f;
+    float timeLimitation = 10f;
     float timeStamp;
     // Interaction objects variablex
     public int catsToTake;
@@ -41,9 +42,9 @@ public class Player_Interaction : MonoBehaviour
         catNumber.text = "Cats left: " + cat_Carried;
         catsSentSuccessfully.text = "Cats sent: " + cat_Sent;
         timeShowing.text = ((int)timeStamp).ToString();
-        if((int)timeStamp <= 0)
+        if((int)timeStamp <= 0 || cat_Carried <= 0)
         {
-            LoseTimeOut();
+            LoadLoseScene();
         }
     }
 
@@ -59,8 +60,10 @@ public class Player_Interaction : MonoBehaviour
         }
     }
 
-    void LoseTimeOut()
+    void LoadLoseScene()
     {
-
+        SceneManager.LoadScene("endS");
     }
+
+
 }
