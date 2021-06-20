@@ -16,6 +16,7 @@ public class Player_Interaction : MonoBehaviour
     // Interaction objects variablex
     public int catsToTake;
     public int cat_Carried;
+    public int cat_NeedToGive = 1;
     public int cat_Sent = 0;
     bool canTakeCats;
 
@@ -42,6 +43,10 @@ public class Player_Interaction : MonoBehaviour
         catNumber.text = "Cats left: " + cat_Carried;
         catsSentSuccessfully.text = "Cats sent: " + cat_Sent;
         timeShowing.text = ((int)timeStamp).ToString();
+        if(cat_Sent >= cat_NeedToGive)
+        {
+            LoadWinScene();
+        }
         if((int)timeStamp <= 0 || cat_Carried <= 0)
         {
             LoadLoseScene();
@@ -58,6 +63,11 @@ public class Player_Interaction : MonoBehaviour
         if(other.gameObject.tag == "Cat"){
             cat_Carried = cat_Carried + 1;
         }
+    }
+
+    void LoadWinScene()
+    {
+        SceneManager.LoadScene("newChat");
     }
 
     void LoadLoseScene()
