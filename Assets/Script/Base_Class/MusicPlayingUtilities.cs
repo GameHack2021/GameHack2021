@@ -60,8 +60,19 @@ public class MusicPlayingUtilities : MonoBehaviour
                 yield return null;
             }
 
+        }
 
 
+    }
+
+    public IEnumerator LoopAudioTV(AudioClip audioClip, float volume)
+    {
+        audioSource = GetComponent<AudioSource>();
+        float length = audioClip.length;
+        while (true)
+        {
+            audioSource.PlayOneShot(audioClip, volume);
+            yield return new WaitForSeconds(Random.Range(6f, 9f));
         }
     }
 }

@@ -8259,6 +8259,7 @@ MonoBehaviour:
   footstep_02: {fileID: 8300000, guid: 65dcf4b274d785440ba2a0676baf3037, type: 3}
   jumping: {fileID: 8300000, guid: 932fd5cddb27d0c40a3528313d49595f, type: 3}
   landing: {fileID: 8300000, guid: 76c8439257f298348b28ce8f06b53c99, type: 3}
+  balloon: {fileID: 8300000, guid: 3b62d6aed2816f84dbbe1104ac24d196, type: 3}
 --- !u!82 &1706559775
 AudioSource:
   m_ObjectHideFlags: 0

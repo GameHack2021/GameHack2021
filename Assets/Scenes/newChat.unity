@@ -2334,6 +2334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowPlaying: 0
   clip: {fileID: 8300000, guid: dde5e222288a16a42a77f96bdca4e693, type: 3}
+  clipTV: {fileID: 8300000, guid: 34e05f1a935287e4cb0e0b0c893a510c, type: 3}
+  clipSpark: {fileID: 8300000, guid: 8732a3665d7713b41a8d9db5d79a63ec, type: 3}
 --- !u!1 &1521130560
 GameObject:
   m_ObjectHideFlags: 0
