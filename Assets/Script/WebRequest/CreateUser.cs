@@ -19,9 +19,8 @@ public class CreateUser : MonoBehaviour
     }
 
   
-    IEnumerator getUserID(string url, string name)
+    IEnumerator Post(string url, string name)
     {
-       
         var request = new UnityWebRequest(url, "POST");
         
         PlayerInfo sendJsonData = new PlayerInfo();
@@ -34,11 +33,7 @@ public class CreateUser : MonoBehaviour
         request.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
-        
         yield return request.SendWebRequest();
-        
-
-        Debug.Log("start regist");
 
         string response = request.downloadHandler.text;
         int playerID = int.Parse(response.Split(',')[1].Split(':')[1]);
@@ -48,13 +43,10 @@ public class CreateUser : MonoBehaviour
 
         // Store userID as the information
         Info.userID = playerID;
-
-
     }
 
     public void registUser(string name){
-
-        StartCoroutine(getUserID("http://47.98.203.153/api/player/",name ));
+        StartCoroutine(Post("http://47.98.203.153/api/player/",name ));
 
     }
 }

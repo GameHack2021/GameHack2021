@@ -34,10 +34,6 @@ public class Chat_Manage : MonoBehaviour
       public string text;
     }
 
-    public class runTurnStart{
-       public int playerId;
-    }
-
 
    private void Start() {
 
@@ -174,6 +170,7 @@ public class Chat_Manage : MonoBehaviour
                 return ((char) int.Parse( m.Groups["Value"].Value, System.Globalization.NumberStyles.HexNumber )).ToString();
             } );
     }
+<<<<<<< HEAD
 
     void decideStage(){
        endIndex = endPoints[Info.convsProg];
@@ -215,4 +212,6 @@ public class Chat_Manage : MonoBehaviour
         StartCoroutine(startRun("http://47.98.203.153/api/start_run/"));
 
     }
+=======
+>>>>>>> parent of c8b0210 (Merge branch 'main' of https://github.com/GameHack2021/GameHack2021 into main)
 }
