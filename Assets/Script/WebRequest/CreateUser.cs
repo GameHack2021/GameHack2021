@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Net.Http;
+using System.Dynamic;
+using System.Text;
 
 public class CreateUser : MonoBehaviour
 {
@@ -11,47 +14,28 @@ public class CreateUser : MonoBehaviour
     }
 
     private void Start() {
-        // StartCoroutine(postRequest("http:///www.yoururl.com", "your json"));
+    
+       StartCoroutine(Post("http://47.98.203.153/api/player/"));
     }
 
-    UnityWebRequest createUser(string username){
-        string uri = "http://47.98.203.153/api/player/";
-
+  
+    IEnumerator Post(string url)
+    {
+        var request = new UnityWebRequest(url, "POST");
+        
         PlayerInfo sendJsonData = new PlayerInfo();
-        sendJsonData.playerEmail= username;
-        sendJsonData.playerName = username;
-
-        using UnityWebRequest request = UnityWebRequest.Post(uri, UnityWebRequest.kHttpVerbPOST);
-        request.chunkedTransfer = false;
-
-        string json = JsonUtility.ToJson(sendJsonData);
-        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
-        request.uploadHandler = new UploadHandlerRaw(jsonToSend);
-        request.downloadHandler = new DownloadHandlerBuffer();
+        sendJsonData.playerEmail= "Test";
+        sendJsonData.playerName = "test";
+        
+        string bodyJsonString = JsonUtility.ToJson(sendJsonData);
+        byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
+        
+        request.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
-
-        return request;
-
+        yield return request.SendWebRequest();
+        
+        Debug.Log("Status Code: " + request.downloadHandler.text);
     }
-
-     IEnumerator PostRequest(string url, string json){
-     var uwr = new UnityWebRequest(url, "POST");
-     byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
-     uwr.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
-     uwr.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
-     uwr.SetRequestHeader("Content-Type", "application/json");
-
-     //Send the request then wait here until it returns
-     yield return uwr.SendWebRequest();
-
-     if (uwr.isNetworkError)
-     {
-         Debug.Log("Error While Sending: " + uwr.error);
-     }
-     else
-     {
-         Debug.Log("Received: " + uwr.downloadHandler.text);
-     }
- }
 
 }
