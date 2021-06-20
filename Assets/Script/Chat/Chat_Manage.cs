@@ -36,7 +36,7 @@ public class Chat_Manage : MonoBehaviour
       Cat = GameObject.Find("Cat");
       player_Talk = GameObject.Find("playerTalk").GetComponent<Text>();
       cat_Talk = GameObject.Find("catTalk").GetComponent<Text>();
-      input = GameObject.Find("inputText").GetComponent<Text>();
+      input = GameObject.Find("minputText").GetComponent<Text>();
 
       playerChatPosi = 0;
       catChatPosi = 0;
