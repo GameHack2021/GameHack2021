@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 848788063185978286}
   - component: {fileID: 2413218101066387964}
   - component: {fileID: 506162471065252920}
+  - component: {fileID: 5664059802509071419}
   - component: {fileID: 2516545336228440919}
   m_Layer: 0
   m_Name: FloatingCat
@@ -119,6 +120,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5664059802509071419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843361065487345598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e107c87977f344c80dcc8ad8f0db90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hriMoveSpeed: 4
+  amplitude: 5
+  fraquency: 1.5
 --- !u!70 &2516545336228440919
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
