@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class trans : MonoBehaviour
 {
     public void nextScene(){
-        SceneManager.LoadScene("level1");
+        SceneManager.LoadScene("newChat");
     }
 }
