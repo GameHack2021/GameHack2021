@@ -122,11 +122,8 @@ public class Player_Interaction : MonoBehaviour
 
     IEnumerator OnWin()
     {
-
         winSign.gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("newChat");
     }
-
-
 }
