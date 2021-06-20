@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class Chat_Manage : MonoBehaviour
@@ -17,6 +21,14 @@ public class Chat_Manage : MonoBehaviour
 
    int playerChatPosi;
    int catChatPosi;
+   int chaosRound;
+   string prompt;
+
+   public class chatMessage{
+      public int playerId;
+      public string text;
+    }
+
 
    private void Start() {
 
@@ -28,6 +40,7 @@ public class Chat_Manage : MonoBehaviour
 
       playerChatPosi = 0;
       catChatPosi = 0;
+      chaosRound = 0;
 
       intialization();
    }
@@ -42,6 +55,7 @@ public class Chat_Manage : MonoBehaviour
       generatePlayerTalk();
       Player.SetActive(true);
       Cat.SetActive(false);
+      input.gameObject.transform.parent.gameObject.SetActive(false);
    }
 
    void nextConversation(){
@@ -58,26 +72,69 @@ public class Chat_Manage : MonoBehaviour
 
    void generateCatTalk(){
       // TODO:call api  
-      cat_Talk.text = catScript[catChatPosi];
-      catChatPosi = catChatPosi +1;
+      if(catChatPosi >= 2 && catChatPosi <=4){
+         cat_Talk.text = "...";
+         getResponseAPI();
+      }else{
+         cat_Talk.text = catScript[catChatPosi];
+         catChatPosi = catChatPosi +1;
+      }
       
       // Clear Input Field and hide the input
       input.transform.parent.gameObject.SetActive(false);
    }
 
    void generatePlayerTalk(){
-      player_Talk.text = playerScript[playerChatPosi];
-      playerChatPosi = playerChatPosi +1;
-
-      input.transform.parent.gameObject.SetActive(true);
-
+      if(playerChatPosi >= 2 && playerChatPosi <=4){
+         input.transform.parent.gameObject.SetActive(true);
+         player_Talk.text = "...";
+      }else{
+         player_Talk.text = playerScript[playerChatPosi];
+         playerChatPosi = playerChatPosi +1;
+      }
 
    }
 
    public void sendText(){
       player_Talk.text = input.text;
+      prompt = input.text;
       input.transform.parent.GetComponent<InputField>().Select();
       input.transform.parent.GetComponent<InputField>().text = "";
 
    }
+
+   public void getResponseAPI(){
+      StartCoroutine(Post("http://47.98.203.153/api/translator/conversation/",prompt));
+   }
+
+   IEnumerator Post(string url, string prompt)
+    {
+        var request = new UnityWebRequest(url, "POST");
+        
+        chatMessage sendJsonData = new chatMessage();
+        sendJsonData.playerId= 1;
+        sendJsonData.text = prompt;
+        
+        string bodyJsonString = JsonUtility.ToJson(sendJsonData);
+        Debug.Log(bodyJsonString);
+        byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
+        
+        request.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+        yield return request.SendWebRequest();
+
+        string response = request.downloadHandler.text;
+         Debug.Log("Status Code: " + request.downloadHandler.text);
+        Debug.Log(response);
+        Debug.Log(response.Split(':')[1]);
+
+        string answer = @response.Split(':')[1].Replace("}","").Replace("\"","");
+      //    var chars = answer.Split(new[]{@"\u"}, System.StringSplitOptions.RemoveEmptyEntries).Select(c => (char)Convert.ToInt32(c, 16)).ToArray();
+      // var output = new string(chars);
+
+
+        // Store userID as the information
+        cat_Talk.text = answer;
+    }
 }
