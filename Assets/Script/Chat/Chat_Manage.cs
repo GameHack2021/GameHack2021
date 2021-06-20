@@ -72,8 +72,10 @@ public class Chat_Manage : MonoBehaviour
    void nextConversation(){
       Debug.Log(playerChatPosi);
       if(playerChatPosi == 6){
-         // TODO: Load end scene
+         SceneManager.LoadScene("endS");
       }
+
+
       if(Player.active){
          Cat.SetActive(true);
          Player.SetActive(false);
@@ -171,5 +173,10 @@ public class Chat_Manage : MonoBehaviour
 
     void decideStage(){
        endIndex = endPoints[Info.convsProg];
+    }
+
+   public void loadToMain(){
+       SceneManager.LoadScene("level1");
+       Info.convsProg = Info.convsProg +1;
     }
 }
