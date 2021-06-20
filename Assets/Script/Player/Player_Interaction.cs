@@ -41,6 +41,10 @@ public class Player_Interaction : MonoBehaviour
         catNumber.text = "Cats left: " + cat_Carried;
         catsSentSuccessfully.text = "Cats sent: " + cat_Sent;
         timeShowing.text = ((int)timeStamp).ToString();
+        if((int)timeStamp <= 0)
+        {
+            LoseTimeOut();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -53,5 +57,10 @@ public class Player_Interaction : MonoBehaviour
         if(other.gameObject.tag == "Cat"){
             cat_Carried = cat_Carried + 1;
         }
+    }
+
+    void LoseTimeOut()
+    {
+
     }
 }
