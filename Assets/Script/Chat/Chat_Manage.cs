@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Chat_Manage : MonoBehaviour
@@ -59,6 +60,10 @@ public class Chat_Manage : MonoBehaviour
    }
 
    void nextConversation(){
+      Debug.Log(playerChatPosi);
+      if(playerChatPosi == 5){
+         SceneManager.LoadScene("level1");
+      }
       if(Player.active){
          Cat.SetActive(true);
          Player.SetActive(false);
@@ -68,6 +73,8 @@ public class Chat_Manage : MonoBehaviour
          Player.SetActive(true);
          generatePlayerTalk();
       }
+
+
    }
 
    void generateCatTalk(){
@@ -77,9 +84,10 @@ public class Chat_Manage : MonoBehaviour
          getResponseAPI();
       }else{
          cat_Talk.text = catScript[catChatPosi];
-         catChatPosi = catChatPosi +1;
+         
       }
       
+      catChatPosi = catChatPosi +1;
       // Clear Input Field and hide the input
       input.transform.parent.gameObject.SetActive(false);
    }
@@ -90,8 +98,10 @@ public class Chat_Manage : MonoBehaviour
          player_Talk.text = "...";
       }else{
          player_Talk.text = playerScript[playerChatPosi];
-         playerChatPosi = playerChatPosi +1;
+         
       }
+
+      playerChatPosi = playerChatPosi +1;
 
    }
 
