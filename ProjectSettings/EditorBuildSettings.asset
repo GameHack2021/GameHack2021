@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/newChat.unity
     guid: d9a1df7a550b9438493bcbe3e56d708c
   - enabled: 1
+    path: Assets/Scenes/gameEnd.unity
+    guid: 00db9cbd12d77b140bb455bbc4a7bbcf
+  - enabled: 1
+    path: Assets/Scenes/transScene.unity
+    guid: f7ce966fe9a3e0341bbda4676cd3257b
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: b2d644f7874124acd92ead444665ff57
   m_configObjects: {}

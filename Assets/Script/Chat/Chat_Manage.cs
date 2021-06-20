@@ -84,7 +84,7 @@ public class Chat_Manage : MonoBehaviour
         Debug.Log(playerChatPosi);
         if (playerChatPosi == 6)
         {
-            SceneManager.LoadScene("endS");
+            SceneManager.LoadScene("gameEnd");
         }
 
 
