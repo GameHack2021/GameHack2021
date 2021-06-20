@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Player_Interaction : MonoBehaviour
 {
     Player player;
-    public Text catNumber;
+    Text catNumber;
 
     // Interaction objects variablex
     public int catsToTake;
@@ -15,7 +15,7 @@ public class Player_Interaction : MonoBehaviour
 
     private void Awake()
     {
-        //catNumber = GameObject.Find("Canvas/MainSceneUI/catNumber").GetComponent<Text>();
+        catNumber = GameObject.Find("Canvas/MainSceneUI/catNumber").GetComponent<Text>();
     }
 
     void Start()

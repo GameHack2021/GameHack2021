@@ -10,8 +10,7 @@ public class Door : MonoBehaviour
     public bool canDeliver;
     
     Text canDeliverHint;
-
-    Collider2D personCollider;
+    GameObject doorLight;
     Player_Interaction player_Interaction;
 
     public GameObject floatCat;
@@ -20,7 +19,7 @@ public class Door : MonoBehaviour
     private void Awake() {
         accepted = false;
         canAccept = false;
-        personCollider = GameObject.Find("control").GetComponent<Collider2D>();
+        doorLight = transform.Find("light").gameObject;
         player_Interaction = GameObject.Find("Characters/Player_Armor").GetComponent<Player_Interaction>();
         canDeliverHint = GameObject.Find("Canvas/hintText").GetComponent<Text>();
     }
@@ -28,6 +27,8 @@ public class Door : MonoBehaviour
     private void Start()
     {
         canDeliverHint.gameObject.SetActive(false);
+        doorLight.SetActive(false);
+
     }
 
     private void Update() {
@@ -55,6 +56,7 @@ public class Door : MonoBehaviour
         if(other.gameObject.tag == "Player"){
             canDeliver = true;
             canDeliverHint.gameObject.SetActive(true);
+            doorLight.SetActive(true);
         }
     }
 
@@ -62,6 +64,8 @@ public class Door : MonoBehaviour
         if(other.gameObject.tag == "Player"){
             canDeliver = false;
             canDeliverHint.gameObject.SetActive(false) ;
+            doorLight.SetActive(false);
+
         }
     }
     
