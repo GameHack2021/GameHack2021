@@ -182,7 +182,6 @@ public class Chat_Manage : MonoBehaviour
    public void loadToMain(){
        SceneManager.LoadScene("level1");
        Info.convsProg = Info.convsProg +1;
-
        runReqStart();
 
     }
