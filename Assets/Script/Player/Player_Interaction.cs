@@ -43,6 +43,7 @@ public class Player_Interaction : MonoBehaviour
         catNumber.text = "Cats left: " + cat_Carried;
         catsSentSuccessfully.text = "Cats sent: " + cat_Sent;
         timeShowing.text = ((int)timeStamp).ToString();
+<<<<<<< HEAD
         if(cat_Sent >= cat_NeedToGive)
         {
             LoadWinScene();
@@ -51,6 +52,8 @@ public class Player_Interaction : MonoBehaviour
         {
             LoadLoseScene();
         }
+=======
+>>>>>>> parent of b2ce6a9 (sine)
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -64,6 +67,7 @@ public class Player_Interaction : MonoBehaviour
             cat_Carried = cat_Carried + 1;
         }
     }
+<<<<<<< HEAD
 
     void LoadWinScene()
     {
@@ -76,4 +80,6 @@ public class Player_Interaction : MonoBehaviour
     }
 
 
+=======
+>>>>>>> parent of b2ce6a9 (sine)
 }
