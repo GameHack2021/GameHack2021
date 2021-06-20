@@ -23,6 +23,6 @@ public class StartGameManager : MonoBehaviour
     {
         // print(1);
         createUser.registUser(input.text);
-        SceneManager.LoadScene("PlayingScene1");
+        SceneManager.LoadScene("level1");
     }
 }

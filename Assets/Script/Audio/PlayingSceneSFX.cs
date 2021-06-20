@@ -13,25 +13,23 @@ public class PlayingSceneSFX : MusicPlayingUtilities
     public AudioClip landing;
     AudioSource audioSource;
 
-
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
+
     public void playJumping()
     {
-        audioSource.PlayOneShot(jumping, 0.03f);
+        playAtVolume(jumping, 0.03f);
     }
     public void playLanding()
     {
-        audioSource.PlayOneShot(landing, 0.2f);
+        playAtVolume(landing, 0.2f);
     }
-
     public void startPlayingFootstep()
     {
         StartCoroutine(LoopFootStep(footstep_01, footstep_02)) ;
-        //StartCoroutine(LoopAudio(footstep_01));
     }
 
     public void stopPlayingFootstep()

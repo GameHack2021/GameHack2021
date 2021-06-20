@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Door : MonoBehaviour
 {
     public bool accepted;
     public bool canAccept;
     public bool canDeliver;
+    
+    Text canDeliverHint;
 
     Collider2D personCollider;
     Player_Interaction player_Interaction;
@@ -19,6 +22,12 @@ public class Door : MonoBehaviour
         canAccept = false;
         personCollider = GameObject.Find("control").GetComponent<Collider2D>();
         player_Interaction = GameObject.Find("Characters/Player_Armor").GetComponent<Player_Interaction>();
+        canDeliverHint = GameObject.Find("Canvas/hintText").GetComponent<Text>();
+    }
+
+    private void Start()
+    {
+        canDeliverHint.gameObject.SetActive(false);
     }
 
     private void Update() {
@@ -45,12 +54,14 @@ public class Door : MonoBehaviour
 
         if(other.gameObject.tag == "Player"){
             canDeliver = true;
+            canDeliverHint.gameObject.SetActive(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if(other.gameObject.tag == "Player"){
             canDeliver = false;
+            canDeliverHint.gameObject.SetActive(false) ;
         }
     }
     
