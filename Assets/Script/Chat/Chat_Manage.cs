@@ -11,6 +11,13 @@ public class Chat_Manage : MonoBehaviour
    Text cat_Talk;
    Text input;
 
+   public string[] playerScript = new string[]{"啊？我已经，很多年，没有见到过动物了！这是……猫？按照我的印象，这种动物已经在城市中灭绝了。但看着这么可爱，带回家应该也没问题吧？","可是，可是，这里，地下室很破败，也算不上什么家呢。"};
+
+   public string[] catScript = new string[]{"太好了！！！真的很感谢喵！终于有家了喵！"};
+
+   int playerChatPosi;
+   int catChatPosi;
+
    private void Start() {
 
       Player = GameObject.Find("Player");
@@ -18,6 +25,9 @@ public class Chat_Manage : MonoBehaviour
       player_Talk = GameObject.Find("playerTalk").GetComponent<Text>();
       cat_Talk = GameObject.Find("catTalk").GetComponent<Text>();
       input = GameObject.Find("inputText").GetComponent<Text>();
+
+      playerChatPosi = 0;
+      catChatPosi = 0;
 
       intialization();
    }
@@ -29,6 +39,7 @@ public class Chat_Manage : MonoBehaviour
    }
 
    void intialization(){
+      generatePlayerTalk();
       Player.SetActive(true);
       Cat.SetActive(false);
    }
@@ -47,14 +58,17 @@ public class Chat_Manage : MonoBehaviour
 
    void generateCatTalk(){
       // TODO:call api  
-      cat_Talk.text = "...";
+      cat_Talk.text = catScript[catChatPosi];
+      catChatPosi = catChatPosi +1;
       
       // Clear Input Field and hide the input
       input.transform.parent.gameObject.SetActive(false);
    }
 
    void generatePlayerTalk(){
-      player_Talk.text = "...";
+      player_Talk.text = playerScript[playerChatPosi];
+      playerChatPosi = playerChatPosi +1;
+
       input.transform.parent.gameObject.SetActive(true);
 
 
