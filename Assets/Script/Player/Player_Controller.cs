@@ -68,11 +68,13 @@ public class Player_Controller : MonoBehaviour
         {
             jump();
         }
+        /*
         if (Input.GetButtonDown("GetDown"))
         {
             StopCoroutine( RetainGetDownRequest());
             StartCoroutine( RetainGetDownRequest());
         }
+        */
         if (input_Horizontal == 0 && input_Vertical == 0 && player.canJump)
         {
             Vector2 updated_Velocity = new Vector2(0, player.mRigidBody.velocity.y);
@@ -81,7 +83,7 @@ public class Player_Controller : MonoBehaviour
         if (getDownPermission && player.canJump)
         {
             // TODO: HOLD DOWN
-            if (getDownRequest)
+            if (Input.GetButtonDown("GetDown"))
             {
                 StartCoroutine(BlinkCollider(lastCollision));
             }

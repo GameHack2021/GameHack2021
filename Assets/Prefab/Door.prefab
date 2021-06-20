@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2364310039774213524}
   - component: {fileID: 2364310039774213527}
   - component: {fileID: 2364310039774213526}
-  - component: {fileID: 4585720626357803268}
   - component: {fileID: 7398351185860104870}
   m_Layer: 0
   m_Name: Door
@@ -136,20 +135,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.69, y: 0.63}
   m_EdgeRadius: 0
---- !u!114 &4585720626357803268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2364310039774213521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80637b860b2cacd4992aabd238e848eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  neighbourHideNSeek: {fileID: 0}
-  hintText: {fileID: 0}
 --- !u!114 &7398351185860104870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +177,7 @@ Transform:
   m_GameObject: {fileID: 5606685325519477546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.006116294, y: -0.05350313, z: 0}
-  m_LocalScale: {x: 1.1462381, y: 0.8088517, z: 2.0997}
+  m_LocalScale: {x: 1.1422262, y: 0.80602074, z: 2.092351}
   m_Children: []
   m_Father: {fileID: 2364310039774213525}
   m_RootOrder: 2
@@ -238,7 +223,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 429bde51d696e412c95069e927afccf4, type: 3}
-  m_Color: {r: 1, g: 0.906067, b: 0.8349056, a: 0.4392157}
+  m_Color: {r: 1, g: 0.6630728, b: 0.41037738, a: 0.2784314}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
