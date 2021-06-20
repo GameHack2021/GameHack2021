@@ -129,12 +129,21 @@ public class Chat_Manage : MonoBehaviour
         Debug.Log(response);
         Debug.Log(response.Split(':')[1]);
 
-        string answer = @response.Split(':')[1].Replace("}","").Replace("\"","");
-      //    var chars = answer.Split(new[]{@"\u"}, System.StringSplitOptions.RemoveEmptyEntries).Select(c => (char)Convert.ToInt32(c, 16)).ToArray();
-      // var output = new string(chars);
+        string answer = response.Split(':')[1].Replace("}","").Replace("\"","");
+        string converted = DecodeEncodedNonAsciiCharacters(answer);
+
 
 
         // Store userID as the information
-        cat_Talk.text = answer;
+        cat_Talk.text = converted;
+    }
+
+     static string DecodeEncodedNonAsciiCharacters( string value ) {
+        return System.Text.RegularExpressions.Regex.Replace(
+            value,
+            @"\\u(?<Value>[a-zA-Z0-9]{4})",
+            m => {
+                return ((char) int.Parse( m.Groups["Value"].Value, System.Globalization.NumberStyles.HexNumber )).ToString();
+            } );
     }
 }
