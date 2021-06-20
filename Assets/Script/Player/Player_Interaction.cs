@@ -13,6 +13,7 @@ public class Player_Interaction : MonoBehaviour
     Text timeUpSign;
     Text outOfCats;
     Text winSign;
+    Text fall;
 
     float timeLimitation = 100f;
     float timeStamp;
@@ -31,6 +32,7 @@ public class Player_Interaction : MonoBehaviour
         timeUpSign = GameObject.Find("Canvas/MainSceneUI/timeUpSign").GetComponent<Text>();
         outOfCats = GameObject.Find("Canvas/MainSceneUI/outOfCats").GetComponent<Text>();
         winSign = GameObject.Find("Canvas/MainSceneUI/winSign").GetComponent<Text>();
+        fall = GameObject.Find("Canvas/MainSceneUI/fall").GetComponent<Text>();
         timeStamp = timeLimitation + 1;
     }
 
@@ -42,6 +44,7 @@ public class Player_Interaction : MonoBehaviour
         timeUpSign.gameObject.SetActive(false);
         outOfCats.gameObject.SetActive(false);
         winSign.gameObject.SetActive(false);
+        fall.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,7 +54,7 @@ public class Player_Interaction : MonoBehaviour
         catNumber.text = "Cats left: " + cat_Carried;
         catsSentSuccessfully.text = "Cats sent: " + cat_Sent;
         timeShowing.text = ((int)timeStamp).ToString();
-        if (cat_Sent >= 1)
+        if (cat_Sent >= 8)
         {
             LoadWinScene();
             return;
@@ -63,8 +66,13 @@ public class Player_Interaction : MonoBehaviour
         }
         if(cat_Carried <= 0)
         {
-            LoadWinScene();
+            LoadLoseScene(2);
             return;
+        }
+        if(player.transform.position.y <= -100)
+        {
+            LoadLoseScene(3);
+
         }
     }
 
@@ -103,6 +111,10 @@ public class Player_Interaction : MonoBehaviour
         }if(type == 2)
         {
             outOfCats.gameObject.SetActive(true);
+        }
+        if (type == 3)
+        {
+            fall.gameObject.SetActive(true);
         }
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("endS");
