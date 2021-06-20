@@ -4737,7 +4737,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2752005811804090497, guid: 778521d13266a417987593a59d34809f, type: 3}
       propertyPath: jump_Force
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2752005811804090497, guid: 778521d13266a417987593a59d34809f, type: 3}
       propertyPath: audioManager
@@ -6985,8 +6985,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4585720626357803268, guid: ff94401cd94bd104aa00417a750f8da4, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff94401cd94bd104aa00417a750f8da4, type: 3}
 --- !u!1001 &1903120608
 PrefabInstance:
