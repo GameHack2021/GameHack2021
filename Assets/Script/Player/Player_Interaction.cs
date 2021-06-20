@@ -1,23 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Interaction : MonoBehaviour
 {
     Player player;
-    
+    public Text catNumber;
+
     // Interaction objects variablex
     public int catsToTake;
     public int cat_Carried;
     bool canTakeCats;
 
+    private void Awake()
+    {
+        //catNumber = GameObject.Find("Canvas/MainSceneUI/catNumber").GetComponent<Text>();
+    }
 
     void Start()
     {
         player = GetComponent<Player>();
 
         // initialize variables
-        cat_Carried = 0;
         canTakeCats = true;
         
     }
@@ -25,7 +30,7 @@ public class Player_Interaction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        catNumber.text = "Cats left: " + cat_Carried;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

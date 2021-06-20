@@ -12,6 +12,7 @@ public class MusicPlayingUtilities : MonoBehaviour
     private void Awake()
     {
         allowPlaying = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void playAtVolume(AudioClip a, float volume)

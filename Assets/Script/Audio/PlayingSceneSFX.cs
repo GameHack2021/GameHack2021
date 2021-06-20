@@ -11,13 +11,6 @@ public class PlayingSceneSFX : MusicPlayingUtilities
     public AudioClip footstep_02;
     public AudioClip jumping;
     public AudioClip landing;
-    AudioSource audioSource;
-
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
-
 
     public void playJumping()
     {
