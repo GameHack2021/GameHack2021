@@ -22,6 +22,7 @@ public class Player_Interaction : MonoBehaviour
     public int goalSends = 8;
     public int cat_Carried;
     public int cat_Sent = 0;
+    CameraSaturationSettings cameraSaturationSettings;
     bool canTakeCats;
 
     private void Awake()
@@ -33,6 +34,7 @@ public class Player_Interaction : MonoBehaviour
         outOfCats = GameObject.Find("Canvas/MainSceneUI/outOfCats").GetComponent<Text>();
         winSign = GameObject.Find("Canvas/MainSceneUI/winSign").GetComponent<Text>();
         fall = GameObject.Find("Canvas/MainSceneUI/fall").GetComponent<Text>();
+        cameraSaturationSettings = GameObject.Find("Cameras/Main Camera").GetComponent<CameraSaturationSettings>();
         timeStamp = timeLimitation + 1;
     }
 
@@ -54,6 +56,7 @@ public class Player_Interaction : MonoBehaviour
         catNumber.text = "Cats left: " + cat_Carried;
         catsSentSuccessfully.text = "Cats sent: " + cat_Sent;
         timeShowing.text = ((int)timeStamp).ToString();
+        cameraSaturationSettings.saturation = Mathf.Clamp(cat_Sent / 8 + 0.5f, 0f, 1f) ;
         if (cat_Sent >= 8)
         {
             LoadWinScene();
@@ -72,7 +75,7 @@ public class Player_Interaction : MonoBehaviour
         if(player.transform.position.y <= -100)
         {
             LoadLoseScene(3);
-
+            return;
         }
     }
 
