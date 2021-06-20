@@ -38,8 +38,5 @@ public class Player_Interaction : MonoBehaviour
         if(other.gameObject.tag == "Cat"){
             cat_Carried = cat_Carried + 1;
         }
-
-
-        Debug.Log("Carried cat:"+cat_Carried);
     }
 }

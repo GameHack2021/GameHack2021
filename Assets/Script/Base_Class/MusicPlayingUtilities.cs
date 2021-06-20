@@ -14,11 +14,12 @@ public class MusicPlayingUtilities : MonoBehaviour
         allowPlaying = false;
     }
 
-    private void Update()
+    public void playAtVolume(AudioClip a, float volume)
     {
-        // print(allowPlaying);
-
+        audioSource.PlayOneShot(a, volume);
     }
+
+
     public IEnumerator LoopAudio(AudioClip audioClip, float volume)
     {
         audioSource = GetComponent<AudioSource>();
