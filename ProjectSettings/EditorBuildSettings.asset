@@ -4,35 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/StartScene.unity
-    guid: fd214e15901a42041a32bec9c9697755
-  - enabled: 1
-    path: Assets/Scenes/aaa.unity
-    guid: 3b41fec0dbb4e4574832b10efbd45e2c
-  - enabled: 1
-    path: Assets/Scenes/Chatting.unity
-    guid: 418056183357cf54eba0c2b6b0c6a188
-  - enabled: 1
-    path: Assets/Scenes/endS.unity
-    guid: 4e9ed2267753ccc4c9e98b20a7c96159
-<<<<<<< HEAD
-=======
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/level1.unity
-    guid: a896d731b60114f42b772d09e3e273ff
->>>>>>> parent of ecb9671 (Revert "Merge branch 'main' of https://github.com/GameHack2021/GameHack2021 into main")
-  - enabled: 1
-    path: Assets/Scenes/MapScene_load.unity
-    guid: a95f8ba2b291856498dfd434b13185a4
-  - enabled: 1
-    path: Assets/Scenes/newChat.unity
-    guid: d9a1df7a550b9438493bcbe3e56d708c
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: b2d644f7874124acd92ead444665ff57
+  m_Scenes: []
   m_configObjects: {}

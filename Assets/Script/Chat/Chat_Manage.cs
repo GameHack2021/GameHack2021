@@ -182,7 +182,7 @@ public class Chat_Manage : MonoBehaviour
    public void loadToMain(){
        SceneManager.LoadScene("level1");
        Info.convsProg = Info.convsProg +1;
-<<<<<<< HEAD
+
        runReqStart();
 
     }
@@ -215,7 +215,5 @@ public class Chat_Manage : MonoBehaviour
     public void runReqStart(){
         StartCoroutine(startRun("http://47.98.203.153/api/start_run/"));
 
-=======
->>>>>>> parent of ecb9671 (Revert "Merge branch 'main' of https://github.com/GameHack2021/GameHack2021 into main")
     }
 }

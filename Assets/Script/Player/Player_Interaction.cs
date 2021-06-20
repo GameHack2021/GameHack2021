@@ -43,43 +43,38 @@ public class Player_Interaction : MonoBehaviour
         catNumber.text = "Cats left: " + cat_Carried;
         catsSentSuccessfully.text = "Cats sent: " + cat_Sent;
         timeShowing.text = ((int)timeStamp).ToString();
-<<<<<<< HEAD
-        if(cat_Sent >= cat_NeedToGive)
+
+        if (cat_Sent >= cat_NeedToGive)
         {
             LoadWinScene();
         }
-        if((int)timeStamp <= 0 || cat_Carried <= 0)
+        if ((int)timeStamp <= 0 || cat_Carried <= 0)
         {
             LoadLoseScene();
         }
-=======
->>>>>>> parent of b2ce6a9 (sine)
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "Home"){
-            if(canTakeCats){
-                cat_Carried = cat_Carried + catsToTake;
+        private void OnTriggerEnter2D(Collider2D other) {
+            if (other.gameObject.tag == "Home") {
+                if (canTakeCats) {
+                    cat_Carried = cat_Carried + catsToTake;
+                }
+            }
+
+            if (other.gameObject.tag == "Cat") {
+                cat_Carried = cat_Carried + 1;
             }
         }
 
-        if(other.gameObject.tag == "Cat"){
-            cat_Carried = cat_Carried + 1;
+        void LoadWinScene()
+        {
+            SceneManager.LoadScene("newChat");
         }
-    }
-<<<<<<< HEAD
 
-    void LoadWinScene()
-    {
-        SceneManager.LoadScene("newChat");
-    }
-
-    void LoadLoseScene()
-    {
-        SceneManager.LoadScene("endS");
-    }
+        void LoadLoseScene()
+        {
+            SceneManager.LoadScene("endS");
+        } 
 
 
-=======
->>>>>>> parent of b2ce6a9 (sine)
 }
