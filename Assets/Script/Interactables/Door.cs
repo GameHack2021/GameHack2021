@@ -12,6 +12,9 @@ public class Door : MonoBehaviour
     Text canDeliverHint;
     GameObject doorLight;
     Player_Interaction player_Interaction;
+    GameObject catDroppingObj;
+    Animator catDroppingAnim;
+    GameObject player;
 
     public GameObject floatCat;
 
@@ -20,8 +23,12 @@ public class Door : MonoBehaviour
         accepted = false;
         canAccept = false;
         doorLight = transform.Find("light").gameObject;
-        player_Interaction = GameObject.Find("Characters/Player_Armor").GetComponent<Player_Interaction>();
+        player = GameObject.Find("Characters/Player_Armor");
+        player_Interaction = player.GetComponent<Player_Interaction>();
         canDeliverHint = GameObject.Find("Canvas/hintText").GetComponent<Text>();
+        catDroppingObj = transform.Find("catDrop").gameObject;
+        catDroppingAnim = catDroppingObj.GetComponent<Animator>();
+        catDroppingObj.SetActive(false);
     }
 
     private void Start()
@@ -34,14 +41,8 @@ public class Door : MonoBehaviour
     private void Update() {
         if(!accepted){
             if(canDeliver && Input.GetButtonDown("Fire1")){
-                if(canAccept){
-                    accepted = true;
-                }else{
-                    GameObject temp = Instantiate(floatCat,transform);
-                    temp.transform.localPosition = new Vector3(0,0.42f,0);
-                }
-
-                player_Interaction.cat_Carried = player_Interaction.cat_Carried -1;
+                StartCoroutine(dropDownDetection());
+                
             }
         }
         
@@ -67,6 +68,26 @@ public class Door : MonoBehaviour
             doorLight.SetActive(false);
 
         }
+    }
+
+    IEnumerator dropDownDetection()
+    {
+        catDroppingObj.SetActive(true);
+        catDroppingAnim.SetBool("PlayAnim", true);
+        yield return new WaitForSeconds(0.5f);
+        if (canAccept)
+        {
+            accepted = true;
+        }
+        else
+        {
+            GameObject temp = Instantiate(floatCat, transform);
+            temp.transform.localPosition = new Vector3(0, 0.42f, 0);
+        }
+
+        player_Interaction.cat_Carried = player_Interaction.cat_Carried - 1;
+        catDroppingObj.SetActive(false);
+        catDroppingAnim.SetBool("PlayAnim", false);
     }
     
 }
