@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -127,20 +129,10 @@ public class Chat_Manage : MonoBehaviour
         Debug.Log(response);
         Debug.Log(response.Split(':')[1]);
 
-        string answer = response.Split(':')[1].Replace("}","").Replace("\"","");
-        byte[] answerByte = Encoding.Unicode.GetBytes(answer);
-        Debug.Log(answerByte);
-        Encoding ascii = Encoding.UTF8;
-        Encoding unicode = Encoding.Unicode;
-         byte[] asciiBytes = Encoding.Convert(unicode, ascii, answerByte);
+        string answer = @response.Split(':')[1].Replace("}","").Replace("\"","");
+      //    var chars = answer.Split(new[]{@"\u"}, System.StringSplitOptions.RemoveEmptyEntries).Select(c => (char)Convert.ToInt32(c, 16)).ToArray();
+      // var output = new string(chars);
 
-         char[] asciiChars = new char[ascii.GetCharCount(asciiBytes, 0, asciiBytes.Length)];
-         ascii.GetChars(asciiBytes, 0, asciiBytes.Length, asciiChars, 0);
-        string asciiString = new string(asciiChars);
-        answer = Encoding.UTF8.GetString(answerByte);
-        
-        Debug.Log("Status Code: " + request.downloadHandler.text);
-        Debug.Log("Answer: " + asciiString);
 
         // Store userID as the information
         cat_Talk.text = answer;
