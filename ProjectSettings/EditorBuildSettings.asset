@@ -17,12 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/endS.unity
     guid: 4e9ed2267753ccc4c9e98b20a7c96159
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/level1.unity
-    guid: a896d731b60114f42b772d09e3e273ff
   - enabled: 1
     path: Assets/Scenes/MapScene_load.unity
     guid: a95f8ba2b291856498dfd434b13185a4
