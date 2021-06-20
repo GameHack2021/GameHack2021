@@ -14,18 +14,18 @@ public class CreateUser : MonoBehaviour
     }
 
     private void Start() {
-    
-       StartCoroutine(Post("http://47.98.203.153/api/player/"));
+
+      
     }
 
   
-    IEnumerator Post(string url)
+    IEnumerator Post(string url, string name)
     {
         var request = new UnityWebRequest(url, "POST");
         
         PlayerInfo sendJsonData = new PlayerInfo();
-        sendJsonData.playerEmail= "Test";
-        sendJsonData.playerName = "test";
+        sendJsonData.playerEmail= name;
+        sendJsonData.playerName = name;
         
         string bodyJsonString = JsonUtility.ToJson(sendJsonData);
         byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
@@ -34,8 +34,19 @@ public class CreateUser : MonoBehaviour
         request.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
         yield return request.SendWebRequest();
+
+        string response = request.downloadHandler.text;
+        int playerID = int.Parse(response.Split(',')[1].Split(':')[1]);
         
         Debug.Log("Status Code: " + request.downloadHandler.text);
+        Debug.Log("PlayerID" + playerID);
+
+        // Store userID as the information
+        Info.userID = playerID;
     }
 
+    public void registUser(string name){
+        StartCoroutine(Post("http://47.98.203.153/api/player/",name ));
+
+    }
 }
