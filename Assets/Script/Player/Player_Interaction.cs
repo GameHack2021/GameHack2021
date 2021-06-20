@@ -10,11 +10,15 @@ public class Player_Interaction : MonoBehaviour
     Text catNumber;
     Text catsSentSuccessfully;
     Text timeShowing;
+    Text timeUpSign;
+    Text outOfCats;
+    Text winSign;
 
-    float timeLimitation = 10f;
+    float timeLimitation = 100f;
     float timeStamp;
     // Interaction objects variablex
     public int catsToTake;
+    public int goalSends = 8;
     public int cat_Carried;
     public int cat_Sent = 0;
     bool canTakeCats;
@@ -24,6 +28,9 @@ public class Player_Interaction : MonoBehaviour
         catNumber = GameObject.Find("Canvas/MainSceneUI/catNumber").GetComponent<Text>();
         catsSentSuccessfully = GameObject.Find("Canvas/MainSceneUI/catsSentSuccessfully").GetComponent<Text>();
         timeShowing = GameObject.Find("Canvas/MainSceneUI/time").GetComponent<Text>();
+        timeUpSign = GameObject.Find("Canvas/MainSceneUI/timeUpSign").GetComponent<Text>();
+        outOfCats = GameObject.Find("Canvas/MainSceneUI/outOfCats").GetComponent<Text>();
+        winSign = GameObject.Find("Canvas/MainSceneUI/winSign").GetComponent<Text>();
         timeStamp = timeLimitation + 1;
     }
 
@@ -32,7 +39,9 @@ public class Player_Interaction : MonoBehaviour
         player = GetComponent<Player>();
         // initialize variables
         canTakeCats = true;
-        
+        timeUpSign.gameObject.SetActive(false);
+        outOfCats.gameObject.SetActive(false);
+        winSign.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,27 +51,69 @@ public class Player_Interaction : MonoBehaviour
         catNumber.text = "Cats left: " + cat_Carried;
         catsSentSuccessfully.text = "Cats sent: " + cat_Sent;
         timeShowing.text = ((int)timeStamp).ToString();
-        if((int)timeStamp <= 0 || cat_Carried <= 0)
+        if (cat_Sent >= 1)
         {
-            LoadLoseScene();
+            LoadWinScene();
+            return;
+        }
+        if ((int)timeStamp <= 0)
+        {
+            LoadLoseScene(1);
+            return;
+        }
+        if(cat_Carried <= 0)
+        {
+            LoadWinScene();
+            return;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "Home"){
-            if(canTakeCats){
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Home")
+        {
+            if (canTakeCats)
+            {
                 cat_Carried = cat_Carried + catsToTake;
             }
         }
 
-        if(other.gameObject.tag == "Cat"){
+        if (other.gameObject.tag == "Cat")
+        {
             cat_Carried = cat_Carried + 1;
         }
     }
 
-    void LoadLoseScene()
+    void LoadLoseScene(int type)
     {
+        StartCoroutine(OnFail(type));
+    }
+
+    void LoadWinScene()
+    {
+        StartCoroutine(OnWin());
+    }
+    
+    IEnumerator OnFail(int type)
+    {
+        if(type == 1)
+        {
+            timeUpSign.gameObject.SetActive(true);
+
+        }if(type == 2)
+        {
+            outOfCats.gameObject.SetActive(true);
+        }
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("endS");
+    }
+
+    IEnumerator OnWin()
+    {
+
+        winSign.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("newChat");
     }
 
 
