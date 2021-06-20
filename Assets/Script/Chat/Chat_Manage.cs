@@ -16,6 +16,10 @@ public class Chat_Manage : MonoBehaviour
    Text cat_Talk;
    Text input;
 
+   int endIndex;
+
+   public int[] endPoints;
+
    public string[] playerScript = new string[]{"啊？我已经，很多年，没有见到过动物了！这是……猫？按照我的印象，这种动物已经在城市中灭绝了。但看着这么可爱，带回家应该也没问题吧？","可是，可是，这里，地下室很破败，也算不上什么家呢。"};
 
    public string[] catScript = new string[]{"太好了！！！真的很感谢喵！终于有家了喵！"};
@@ -39,11 +43,17 @@ public class Chat_Manage : MonoBehaviour
       cat_Talk = GameObject.Find("catTalk").GetComponent<Text>();
       input = GameObject.Find("minputText").GetComponent<Text>();
 
-      playerChatPosi = 0;
-      catChatPosi = 0;
-      chaosRound = 0;
+
+
+      decideStage();
+
+      playerChatPosi = endIndex-2;
+      catChatPosi = endIndex-2;
 
       intialization();
+
+
+      Debug.Log(endIndex);
    }
    private void Update() {
 
@@ -61,8 +71,8 @@ public class Chat_Manage : MonoBehaviour
 
    void nextConversation(){
       Debug.Log(playerChatPosi);
-      if(playerChatPosi == 5){
-         SceneManager.LoadScene("level1");
+      if(playerChatPosi == 6){
+         // TODO: Load end scene
       }
       if(Player.active){
          Cat.SetActive(true);
@@ -79,29 +89,31 @@ public class Chat_Manage : MonoBehaviour
 
    void generateCatTalk(){
       // TODO:call api  
-      if(catChatPosi >= 2 && catChatPosi <=4){
+      if(catChatPosi >= endIndex){
+         // Enter free talk
          cat_Talk.text = "...";
          getResponseAPI();
       }else{
          cat_Talk.text = catScript[catChatPosi];
-         
+         catChatPosi = catChatPosi +1;
       }
       
-      catChatPosi = catChatPosi +1;
+
       // Clear Input Field and hide the input
       input.transform.parent.gameObject.SetActive(false);
    }
 
    void generatePlayerTalk(){
-      if(playerChatPosi >= 2 && playerChatPosi <=4){
+      if(playerChatPosi >= endIndex){
+         // Enter free talk
          input.transform.parent.gameObject.SetActive(true);
          player_Talk.text = "...";
       }else{
+         Debug.Log( playerScript[playerChatPosi]);
          player_Talk.text = playerScript[playerChatPosi];
+         playerChatPosi = playerChatPosi +1;
          
       }
-
-      playerChatPosi = playerChatPosi +1;
 
    }
 
@@ -155,5 +167,9 @@ public class Chat_Manage : MonoBehaviour
             m => {
                 return ((char) int.Parse( m.Groups["Value"].Value, System.Globalization.NumberStyles.HexNumber )).ToString();
             } );
+    }
+
+    void decideStage(){
+       endIndex = endPoints[Info.convsProg];
     }
 }
