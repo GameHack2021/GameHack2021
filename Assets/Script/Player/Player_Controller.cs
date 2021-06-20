@@ -132,6 +132,8 @@ public class Player_Controller : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
+            getDownPermission = false;
+
             audioManager.playLanding();
         }
         else

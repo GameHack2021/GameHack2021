@@ -78,6 +78,7 @@ public class Door : MonoBehaviour
         if (canAccept)
         {
             accepted = true;
+            player_Interaction.cat_Sent++;
         }
         else
         {
