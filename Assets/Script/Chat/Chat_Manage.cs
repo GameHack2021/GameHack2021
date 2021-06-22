@@ -256,7 +256,7 @@ public class Chat_Manage : MonoBehaviour
         try{
             int runID = int.Parse(response.Split(',')[1].Split(':')[1]);
             Info.runID = runID;
-            Debug.Log("RunID" + runID);
+            Debug.Log("UserID:" + Info.userID +" RunID: " + Info.runID );
         }
         catch (IndexOutOfRangeException){
             
