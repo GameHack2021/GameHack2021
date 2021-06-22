@@ -54,6 +54,7 @@ public class Door : MonoBehaviour
         
         if(accepted){
             GetComponent<SpriteRenderer>().color = Color.green;
+            transform.Find("Sprite Mask").Find("control").gameObject.SetActive(false);
         }
         
     }
