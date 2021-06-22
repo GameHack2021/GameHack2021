@@ -22,6 +22,7 @@ public class Door : MonoBehaviour
     public GameObject floatCat;
 
 
+
     private void Awake() {
         accepted = false;
         canAccept = false;

@@ -43,12 +43,12 @@ public class NeighbourHideNSeek : MonoBehaviour
             nextRandomTime = Random.Range(minimalTime, maximalTime);
             timeStamp = 0;
             isThere = true;
-            transform.parent.parent.GetComponent<Door>().canAccept = false;
+            // transform.parent.parent.GetComponent<Door>().canAccept = false;
         }
         if(timeStamp >= 14)
         {
             isThere = false;
-            transform.parent.parent.GetComponent<Door>().canAccept = true;
+            // transform.parent.parent.GetComponent<Door>().canAccept = true;
         }
     }
 
