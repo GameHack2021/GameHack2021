@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using System.Net.Http;
 using System.Dynamic;
 using System.Text;
+using UnityEngine.SceneManagement;
 
 public class CreateUser : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class CreateUser : MonoBehaviour
 
         // Store userID as the information
         Info.userID = playerID;
+        SceneManager.LoadScene("transScene");
     }
 
     public void registUser(string name){
