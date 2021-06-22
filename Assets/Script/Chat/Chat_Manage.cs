@@ -29,6 +29,10 @@ public class Chat_Manage : MonoBehaviour
     int chaosRound;
     string prompt;
 
+    bool enteringText;
+    
+    // variable to check when getting response from the api 
+    bool loading;
     public class chatMessage
     {
         public int playerId;
@@ -67,7 +71,16 @@ public class Chat_Manage : MonoBehaviour
 
         if (Input.GetButtonDown("Submit"))
         {
-            nextConversation();
+            if(enteringText){
+                // This function is mainly to clear the input field
+                sendText();
+                enteringText = false;
+            }
+
+            if(!loading){
+                nextConversation();
+            }
+
         }
     }
 
@@ -77,6 +90,8 @@ public class Chat_Manage : MonoBehaviour
         Player.SetActive(true);
         Cat.SetActive(false);
         input.gameObject.transform.parent.gameObject.SetActive(false);
+        enteringText = false;
+        loading = false;
     }
 
     void nextConversation()
@@ -106,11 +121,12 @@ public class Chat_Manage : MonoBehaviour
 
     void generateCatTalk()
     {
-        // TODO:call api  
+   
         if (catChatPosi >= endIndex)
         {
-            // Enter free talk
-            cat_Talk.text = "...";
+ 
+            cat_Talk.text = "Loading...";
+            loading = true;
             getResponseAPI();
         }
         else
@@ -131,6 +147,7 @@ public class Chat_Manage : MonoBehaviour
             // Enter free talk
             input.transform.parent.gameObject.SetActive(true);
             player_Talk.text = "...";
+            enteringText = true;
         }
         else
         {
@@ -178,13 +195,21 @@ public class Chat_Manage : MonoBehaviour
         Debug.Log(response);
         Debug.Log(response.Split(':')[1]);
 
-        string answer = response.Split(':')[1].Replace("}", "").Replace("\"", "");
-        string converted = DecodeEncodedNonAsciiCharacters(answer);
 
+        // If didn't get the info successfully
+        try{
+            string answer = response.Split(':')[1].Replace("}", "").Replace("\"", "");
+            string converted = DecodeEncodedNonAsciiCharacters(answer);
+            cat_Talk.text = converted;
 
-
-        // Store userID as the information
-        cat_Talk.text = converted;
+        }
+        catch (IndexOutOfRangeException)
+        {
+            cat_Talk.text = "喵喵？~";
+            throw;
+        }
+        
+        loading = false;
     }
 
     static string DecodeEncodedNonAsciiCharacters(string value)
@@ -227,12 +252,17 @@ public class Chat_Manage : MonoBehaviour
 
         string response = request.downloadHandler.text;
         Debug.Log(response);
-        int runID = int.Parse(response.Split(',')[1].Split(':')[1]);
 
-        Debug.Log("RunID" + runID);
-
-        // Store userID as the information
-        //Info.runID = runID;
+        try{
+            int runID = int.Parse(response.Split(',')[1].Split(':')[1]);
+            Info.runID = runID;
+            Debug.Log("RunID" + runID);
+        }
+        catch (IndexOutOfRangeException){
+            
+            throw;
+        }
+        
     }
 
     public void runReqStart()
