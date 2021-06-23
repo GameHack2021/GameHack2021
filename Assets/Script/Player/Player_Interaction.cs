@@ -51,7 +51,7 @@ public class Player_Interaction : MonoBehaviour
         winSign.gameObject.SetActive(false);
         fall.gameObject.SetActive(false);
 
-        mapiRequest = new apiRequests();
+        mapiRequest = GetComponent<apiRequests>();
     }
 
     // Update is called once per frame
@@ -62,7 +62,7 @@ public class Player_Interaction : MonoBehaviour
         catsSentSuccessfully.text = "Cats sent: " + cat_Sent;
         timeShowing.text = ((int)timeStamp).ToString();
         cameraSaturationSettings.saturation = Mathf.Clamp(cat_Sent / 8 + 0.5f, 0f, 1f) ;
-        if (cat_Sent >= 8)
+        if (cat_Sent >= 1)
         {
             LoadWinScene();
             return;
@@ -107,7 +107,7 @@ public class Player_Interaction : MonoBehaviour
 
     void LoadWinScene()
     {
-        StartCoroutine(OnWin());
+        OnWin();
     }
     
     IEnumerator OnFail(int type)
@@ -128,11 +128,14 @@ public class Player_Interaction : MonoBehaviour
         SceneManager.LoadScene("endS");
     }
 
-    IEnumerator OnWin()
+    public void OnWin()
     {
-        winSign.gameObject.SetActive(true);
-        mapiRequest.endRun();
-        yield return new WaitForSeconds(1);
+        if(winSign.gameObject.activeSelf != true){
+            winSign.gameObject.SetActive(true);
+            mapiRequest.endRun();
+        }
+
+        // yield return new WaitForSeconds(1);
         // SceneManager.LoadScene("newChat");
     }
 }

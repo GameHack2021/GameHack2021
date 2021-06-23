@@ -151,7 +151,7 @@ public class Chat_Manage : MonoBehaviour
         }
         else
         {
-            Debug.Log(playerScript[playerChatPosi]);
+            // Debug.Log(playerScript[playerChatPosi]);
             player_Talk.text = playerScript[playerChatPosi];
             playerChatPosi = playerChatPosi + 1;
 
@@ -191,22 +191,15 @@ public class Chat_Manage : MonoBehaviour
         yield return request.SendWebRequest();
 
         string response = request.downloadHandler.text;
-        Debug.Log("Status Code: " + request.downloadHandler.text);
-        Debug.Log(response);
-        Debug.Log(response.Split(':')[1]);
+        Debug.Log("Result: " + request.downloadHandler.text);
 
-
-        // If didn't get the info successfully
-        try{
+        if(request.result == UnityWebRequest.Result.Success){
             string answer = response.Split(':')[1].Replace("}", "").Replace("\"", "");
             string converted = DecodeEncodedNonAsciiCharacters(answer);
             cat_Talk.text = converted;
 
-        }
-        catch (IndexOutOfRangeException)
-        {
+        }else{
             cat_Talk.text = "喵喵？~";
-            throw;
         }
         
         loading = false;

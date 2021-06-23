@@ -27,7 +27,9 @@ public class apiRequests: MonoBehaviour{
         string response = request.downloadHandler.text;
         Debug.Log(response);
         
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("newChat");
+        
     }
 
     public void endRun(){
