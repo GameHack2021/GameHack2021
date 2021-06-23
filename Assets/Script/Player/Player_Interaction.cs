@@ -25,6 +25,9 @@ public class Player_Interaction : MonoBehaviour
     CameraSaturationSettings cameraSaturationSettings;
     bool canTakeCats;
 
+
+    apiRequests mapiRequest;
+
     private void Awake()
     {
         catNumber = GameObject.Find("Canvas/MainSceneUI/catNumber").GetComponent<Text>();
@@ -47,6 +50,8 @@ public class Player_Interaction : MonoBehaviour
         outOfCats.gameObject.SetActive(false);
         winSign.gameObject.SetActive(false);
         fall.gameObject.SetActive(false);
+
+        mapiRequest = new apiRequests();
     }
 
     // Update is called once per frame
@@ -126,7 +131,8 @@ public class Player_Interaction : MonoBehaviour
     IEnumerator OnWin()
     {
         winSign.gameObject.SetActive(true);
+        mapiRequest.endRun();
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("newChat");
+        // SceneManager.LoadScene("newChat");
     }
 }
