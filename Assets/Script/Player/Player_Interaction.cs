@@ -62,7 +62,7 @@ public class Player_Interaction : MonoBehaviour
         catsSentSuccessfully.text = "Cats sent: " + cat_Sent;
         timeShowing.text = ((int)timeStamp).ToString();
         cameraSaturationSettings.saturation = Mathf.Clamp(cat_Sent / 8 + 0.5f, 0f, 1f) ;
-        if (cat_Sent >= 1)
+        if (cat_Sent >= 8)
         {
             LoadWinScene();
             return;
