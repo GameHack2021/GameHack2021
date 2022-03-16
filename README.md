@@ -1,4 +1,3 @@
 # GameHack2021
 # Cat Home:
-    - Created for rct.ai GameHack 2021
-
+    - ![alt text](https://bonnywang.github.io/ImgThumbNail/endCG.jpg)
